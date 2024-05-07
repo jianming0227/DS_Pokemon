@@ -139,6 +139,7 @@ public class ConnectDatabase {
             // Execute the SELECT statement
             ResultSet resultSet = selectStatement.executeQuery();
             
+            
 
             // Check if the result set has data
             if (resultSet.next()) {
