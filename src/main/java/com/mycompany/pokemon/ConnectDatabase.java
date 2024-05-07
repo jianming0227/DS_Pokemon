@@ -138,6 +138,7 @@ public class ConnectDatabase {
 
             // Execute the SELECT statement
             ResultSet resultSet = selectStatement.executeQuery();
+            
 
             // Check if the result set has data
             if (resultSet.next()) {
@@ -799,12 +800,12 @@ public class ConnectDatabase {
                             System.out.println("Oh? Your Bulbasaur is evolving......");
                             System.out.println("Your Bulbasaur is evolving into Ivysaur.");
                             // Update pokemon column and Move3 in the player_pokemon table
-                            updateEvolution(saveNumber, "Ivysaur", "Razor Leaf", 55, null, 0, "Bulbasaur");
-                        } else if (level >= 25) {
+                            updateEvolution(saveNumber, "Ivysaur", "Razor Leaf", 55, null, 0);
+                        } else if (level == 25) {
                             System.out.println("Oh? Your Ivysaur is evolving......");
                             System.out.println("Your Ivysaur is evolving into Venusaur.");
                             // Update pokemon column and Move4 in the player_pokemon table
-                            updateEvolution(saveNumber, "Venusaur", null, 0, "Solar Beam", 120, "Bulbasaur");
+                            updateEvolution(saveNumber, "Venusaur", null, 0, "Solar Beam", 120);
                         }
                         break;
                     case "Charmander":
@@ -813,12 +814,12 @@ public class ConnectDatabase {
                             System.out.println("Oh? Your Charmander is evolving......");
                             System.out.println("Your Charmander is evolving into Charmeleon.");
                             // Update pokemon column and Move3 in the player_pokemon table
-                            updateEvolution(saveNumber, "Charmeleon", "Fire Fang", 65, null, 0, "Charmander");
+                            updateEvolution(saveNumber, "Charmeleon", "Fire Fang", 65, null, 0);
                         } else if (level == 36) {
                             System.out.println("Oh? Your Charmeleon is evolving......");
                             System.out.println("Your Charmeleon is evolving into Charizard.");
                             // Update pokemon column and Move4 in the player_pokemon table
-                            updateEvolution(saveNumber, "Charizard", null, 0, "Inferno", 100, "Charmander");
+                            updateEvolution(saveNumber, "Charizard", null, 0, "Inferno", 100);
                         }
                         break;
                     case "Squirtle":
@@ -827,12 +828,12 @@ public class ConnectDatabase {
                             System.out.println("Oh? Your Squirtle is evolving......");
                             System.out.println("Your Squirtle is evolving into Wartortle.");
                             // Update pokemon column and Move3 in the player_pokemon table
-                            updateEvolution(saveNumber, "Wartortle", "Water Pulse", 60, null, 0, "Squirtle");
+                            updateEvolution(saveNumber, "Wartortle", "Water Pulse", 60, null, 0);
                         } else if (level == 36) {
                             System.out.println("Oh? Your Wartortle is evolving......");
                             System.out.println("Your Wartortle is evolving into Blastoise.");
                             // Update pokemon column and Move4 in the player_pokemon table
-                            updateEvolution(saveNumber, "Blastoise", null, 0, "Wave Crash", 120, "Squirtle");
+                            updateEvolution(saveNumber, "Blastoise", null, 0, "Wave Crash", 120);
                         }
                         break;
                     default:
@@ -849,7 +850,7 @@ public class ConnectDatabase {
     }
 
     // Method to update the evolution in the player_pokemon table
-    private static void updateEvolution(int saveNumber, String evolvedPokemon, String move3, int dmg3, String move4, int dmg, String originalPokemonName) {
+    private static void updateEvolution(int saveNumber, String evolvedPokemon, String move3, int dmg3, String move4, int dmg) {
         // Start building the SQL query
         StringBuilder updateSqlBuilder = new StringBuilder("UPDATE player_pokemon SET pokemon_name = ?");
 
@@ -881,29 +882,15 @@ public class ConnectDatabase {
 
         try (
                 Connection connection = getConnection(); PreparedStatement updateStatement = connection.prepareStatement(updateSql);) {
-            // Set parameters for the UPDATE statement
-//            int parameterIndex = 1;
-//            for (Object parameter : parameters) {
-//                updateStatement.setObject(parameterIndex++, parameter);
-//            }
-//            System.out.println(parameterIndex);
-//            updateStatement.setInt(parameterIndex++, saveNumber);
-//            updateStatement.setString(parameterIndex, originalPokemonName); // For the WHERE clause
-//            System.out.println(parameterIndex);
             for (int i = 0; i < parameters1.size(); i++) {
-                System.out.println(parameters1.get(i));
-                System.out.println(i+1);
                 updateStatement.setString(i + 1, parameters1.get(i));
             }
             
             for (int i = 0; i < parameters2.size(); i++) {
-                System.out.println(parameters2.get(i));
-                System.out.println(i+3);
                 updateStatement.setInt(i + 3, parameters2.get(i));
             }
 
             // Set the parameters for the WHERE clause
-            System.out.println(parameters1.size() + 2);
             updateStatement.setInt(parameters1.size() + 2, saveNumber);
 
             // Execute the UPDATE statement
@@ -1483,7 +1470,7 @@ public class ConnectDatabase {
                         continue; // Generate a new random number if the move index is invalid
                     }
 
-                if (moveName != null) {
+                if (moveName != null && hpLeader > 0) {
                     // A valid move is found
                     currentHpPlayer -= moveDamage;
                     System.out.println(pokemonInfo[0] + " uses " + moveName);
