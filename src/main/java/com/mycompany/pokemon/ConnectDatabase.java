@@ -13,7 +13,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.Random;
 import java.util.Scanner;
@@ -101,7 +103,7 @@ public class ConnectDatabase {
                 Connection connection = getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(sql);) {
             preparedStatement.setInt(1, saveNumber);
             preparedStatement.executeUpdate();
-            System.out.println("Default location set to PalletTown for Save " + saveNumber);
+
         } catch (SQLException e) {
             System.err.println("Database connection error:");
             e.printStackTrace();
@@ -434,6 +436,7 @@ public class ConnectDatabase {
                 // Check if the level is within the specified range
                 if (level > 0 && level <= 10) {
                     if (xp >= 100) {
+                        int remainingXp = xp - 100;
                         int currentLevel = getLevel(saveNumber);
                         // Call the levelUp method
                         levelUp(saveNumber, pokemonName);
@@ -442,10 +445,11 @@ public class ConnectDatabase {
                         System.out.println(getPokemonName(saveNumber) + " [Level " + currentLevel + " --> Level " + updatedLevel + "]");
 
                         // Reset XP to 0
-                        resetXp(saveNumber, pokemonName);
+                        resetXp(saveNumber, pokemonName, remainingXp);
                     }
                 } else if (level > 10 && level <= 30) {
                     if (xp >= 200) {
+                        int remainingXp = xp - 200;
                         int currentLevel = getLevel(saveNumber);
                         // Call the levelUp method
                         levelUp(saveNumber, pokemonName);
@@ -454,10 +458,11 @@ public class ConnectDatabase {
                         System.out.println(getPokemonName(saveNumber) + " [Level " + currentLevel + " --> Level " + updatedLevel + "]");
 
                         // Reset XP to 0
-                        resetXp(saveNumber, pokemonName);
+                        resetXp(saveNumber, pokemonName, remainingXp);
                     }
                 } else if (level > 30) {
                     if (xp >= 300) {
+                        int remainingXp = xp - 300;
                         int currentLevel = getLevel(saveNumber);
                         // Call the levelUp method
                         levelUp(saveNumber, pokemonName);
@@ -466,7 +471,7 @@ public class ConnectDatabase {
                         System.out.println(getPokemonName(saveNumber) + " [Level " + currentLevel + " --> Level " + updatedLevel + "]");
 
                         // Reset XP to 0
-                        resetXp(saveNumber, pokemonName);
+                        resetXp(saveNumber, pokemonName, remainingXp);
                     }
                 }
             } else {
@@ -544,8 +549,8 @@ public class ConnectDatabase {
         }
     }
 
-    public static void resetXp(int saveNumber, String pokemonName) {
-        String updateSql = "UPDATE player_pokemon SET Xp = 0 WHERE player_id = ? AND pokemon_name = ?";
+    public static void resetXp(int saveNumber, String pokemonName, int remainingXp) {
+        String updateSql = "UPDATE player_pokemon SET Xp = " + remainingXp + " WHERE player_id = ? AND pokemon_name = ?";
 
         try (
                 Connection connection = getConnection(); PreparedStatement updateStatement = connection.prepareStatement(updateSql);) {
@@ -789,42 +794,45 @@ public class ConnectDatabase {
                 // Check for evolution based on the pokemon name and level
                 switch (pokemonName) {
                     case "Bulbasaur":
+                    case "Ivysaur":
                         if (level == 16) {
                             System.out.println("Oh? Your Bulbasaur is evolving......");
                             System.out.println("Your Bulbasaur is evolving into Ivysaur.");
                             // Update pokemon column and Move3 in the player_pokemon table
-                            updateEvolution(saveNumber, "Ivysaur", "Razor Leaf", null);
-                        } else if (level == 32) {
+                            updateEvolution(saveNumber, "Ivysaur", "Razor Leaf", 55, null, 0, "Bulbasaur");
+                        } else if (level >= 25) {
                             System.out.println("Oh? Your Ivysaur is evolving......");
                             System.out.println("Your Ivysaur is evolving into Venusaur.");
                             // Update pokemon column and Move4 in the player_pokemon table
-                            updateEvolution(saveNumber, "Venusaur", null, "Solar Beam");
+                            updateEvolution(saveNumber, "Venusaur", null, 0, "Solar Beam", 120, "Bulbasaur");
                         }
                         break;
                     case "Charmander":
+                    case "Charmeleon":
                         if (level == 16) {
                             System.out.println("Oh? Your Charmander is evolving......");
                             System.out.println("Your Charmander is evolving into Charmeleon.");
                             // Update pokemon column and Move3 in the player_pokemon table
-                            updateEvolution(saveNumber, "Charmeleon", "Fire Fang", null);
+                            updateEvolution(saveNumber, "Charmeleon", "Fire Fang", 65, null, 0, "Charmander");
                         } else if (level == 36) {
                             System.out.println("Oh? Your Charmeleon is evolving......");
                             System.out.println("Your Charmeleon is evolving into Charizard.");
                             // Update pokemon column and Move4 in the player_pokemon table
-                            updateEvolution(saveNumber, "Charizard", null, "Inferno");
+                            updateEvolution(saveNumber, "Charizard", null, 0, "Inferno", 100, "Charmander");
                         }
                         break;
                     case "Squirtle":
+                    case "Wartortle":
                         if (level == 16) {
                             System.out.println("Oh? Your Squirtle is evolving......");
                             System.out.println("Your Squirtle is evolving into Wartortle.");
                             // Update pokemon column and Move3 in the player_pokemon table
-                            updateEvolution(saveNumber, "Wartortle", "Water Pulse", null);
+                            updateEvolution(saveNumber, "Wartortle", "Water Pulse", 60, null, 0, "Squirtle");
                         } else if (level == 36) {
                             System.out.println("Oh? Your Wartortle is evolving......");
                             System.out.println("Your Wartortle is evolving into Blastoise.");
                             // Update pokemon column and Move4 in the player_pokemon table
-                            updateEvolution(saveNumber, "Blastoise", null, "Wave Crash");
+                            updateEvolution(saveNumber, "Blastoise", null, 0, "Wave Crash", 120, "Squirtle");
                         }
                         break;
                     default:
@@ -841,18 +849,62 @@ public class ConnectDatabase {
     }
 
     // Method to update the evolution in the player_pokemon table
-    private static void updateEvolution(int saveNumber, String evolvedPokemon, String move3, String move4) {
-        // SQL statement to update the pokemon column, Move3, and Move4 in the player_pokemon table
-        String updateSql = "UPDATE player_pokemon SET pokemon_name = ?, Move3 = COALESCE(?, Move3), Move4 = COALESCE(?, Move4) WHERE player_id = ? AND pokemon_name = ?";
+    private static void updateEvolution(int saveNumber, String evolvedPokemon, String move3, int dmg3, String move4, int dmg, String originalPokemonName) {
+        // Start building the SQL query
+        StringBuilder updateSqlBuilder = new StringBuilder("UPDATE player_pokemon SET pokemon_name = ?");
+
+        // List to hold non-null parameters
+        List<String> parameters1 = new ArrayList<>();
+        List<Integer> parameters2 = new ArrayList<>();
+        parameters1.add(evolvedPokemon); // Add the evolvedPokemon parameter
+
+        // Add move3 parameter if not null
+        if (move3 != null && dmg3 != 0) {
+            updateSqlBuilder.append(", Move3 = ?, dmg3 = ?");
+            parameters1.add(move3);
+            parameters2.add(dmg3);
+        }
+
+        // Add move4 parameter if not null
+        if (move4 != null && dmg != 0) {
+            updateSqlBuilder.append(", Move4 = ?, dmg = ?");
+            parameters1.add(move4);
+            parameters2.add(dmg);
+        }
+
+        // Add the WHERE clause
+        updateSqlBuilder.append(" WHERE player_id = ?");
+
+        // Construct the final SQL query
+        String updateSql = updateSqlBuilder.toString();
+        System.out.println(updateSql);
 
         try (
                 Connection connection = getConnection(); PreparedStatement updateStatement = connection.prepareStatement(updateSql);) {
             // Set parameters for the UPDATE statement
-            updateStatement.setString(1, evolvedPokemon);
-            updateStatement.setString(2, move3);
-            updateStatement.setString(3, move4);
-            updateStatement.setInt(4, saveNumber);
-            updateStatement.setString(5, evolvedPokemon); // For the WHERE clause
+//            int parameterIndex = 1;
+//            for (Object parameter : parameters) {
+//                updateStatement.setObject(parameterIndex++, parameter);
+//            }
+//            System.out.println(parameterIndex);
+//            updateStatement.setInt(parameterIndex++, saveNumber);
+//            updateStatement.setString(parameterIndex, originalPokemonName); // For the WHERE clause
+//            System.out.println(parameterIndex);
+            for (int i = 0; i < parameters1.size(); i++) {
+                System.out.println(parameters1.get(i));
+                System.out.println(i+1);
+                updateStatement.setString(i + 1, parameters1.get(i));
+            }
+            
+            for (int i = 0; i < parameters2.size(); i++) {
+                System.out.println(parameters2.get(i));
+                System.out.println(i+3);
+                updateStatement.setInt(i + 3, parameters2.get(i));
+            }
+
+            // Set the parameters for the WHERE clause
+            System.out.println(parameters1.size() + 2);
+            updateStatement.setInt(parameters1.size() + 2, saveNumber);
 
             // Execute the UPDATE statement
             int rowsAffected = updateStatement.executeUpdate();
@@ -1406,7 +1458,7 @@ public class ConnectDatabase {
             String moveName;
             int moveDamage;
 
-            while (true) {
+            while (true && hpLeader > 0) {
                 opponentMoveIndex = 1; // Generate random number between 1 and 4
 
                 switch (opponentMoveIndex) {

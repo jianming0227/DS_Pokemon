@@ -97,7 +97,6 @@ public class POKEMON {
         try {
             ConnectDatabase.updateName(saveNumber, playerName);
             ConnectDatabase.defaultLocation(saveNumber); // Set default location to PalletTown
-            System.out.println("Player name saved successfully for Save " + saveNumber);
         } catch (SQLException e) {
             System.err.println("Failed to save player name to the database!");
             e.printStackTrace();
@@ -248,22 +247,16 @@ public class POKEMON {
                     break;
                 case "2":
                     if (location.equals("PalletTown")) {
-                        System.out.println("MOM: \"Oh, Amaan! You're leaving on your adventure with Pokémon? How exciting! I know you've always dreamed of this day. Remember, the bond you share with your Pokémon is the most important thing. Take care of them, and they'll take care of you. Don't worry about me; I'll be just fine here. I can't wait to hear all about your adventures and the new friends you're going to make. Remember, no matter how far you go, I'm always here for you. Be brave, be kind, and everything will turn out just fine. I'm so proud of you already! Now, go on, your adventure awaits! Oh, and don’t forget to change your underwear every day! Safe travels, my dear!\"");
+                        System.out.println("MOM: \"Oh, " + ConnectDatabase.getName(saveNumber) + "! You're leaving on your adventure with Pokémon? How exciting! I know you've always dreamed of this day. Remember, the bond you share with your Pokémon is the most important thing. Take care of them, and they'll take care of you. Don't worry about me; I'll be just fine here. I can't wait to hear all about your adventures and the new friends you're going to make. Remember, no matter how far you go, I'm always here for you. Be brave, be kind, and everything will turn out just fine. I'm so proud of you already! Now, go on, your adventure awaits! Oh, and don’t forget to change your underwear every day! Safe travels, my dear!\"");
                     } else if (location.equals("LavenderTown")) {
-                        System.out.println("Exploring the PokeMaze...");
                         LavenderTown lavenderTown = new LavenderTown();
                         lavenderTown.playPokeMaze();
 
-                        // After exploring the PokeMaze, loop back to the main menu
-                        mainMenu(saveNumber);
                     } else {
-                        System.out.println("Challenging Gym Leader " + checkGymType(location) + "...");
                         ConnectDatabase.challengeGymLeader(location, saveNumber);
                     }
                     break;
                 case "3":
-
-                    System.out.println("Fighting Wild Pokemon...");
                     ConnectDatabase.fightWildPokemon(saveNumber,location);
 
                     break;

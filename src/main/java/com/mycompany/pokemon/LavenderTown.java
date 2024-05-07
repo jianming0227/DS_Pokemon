@@ -32,6 +32,8 @@ public class LavenderTown extends City {
         "# # # # # # # # # # # # # # # E #".toCharArray(),
     };
 
+    private boolean exitMaze = false;
+    
     public void playPokeMaze() {
         int playerRow = 1;
         int playerCol = 2;
@@ -41,7 +43,7 @@ public class LavenderTown extends City {
 
         Stack<String> path = new Stack<>();
 
-        while (true) {
+        while (!exitMaze) { // Loop until exitMaze flag is set
             displayMaze(playerRow, playerCol);
             System.out.print("Enter direction (u, d, l, r): ");
             direction = scanner.nextLine().charAt(0);
@@ -49,6 +51,7 @@ public class LavenderTown extends City {
             // Update player position based on direction
             switch (direction) {
                 case 'u':
+                    // Check if the move is valid
                     if (maze[playerRow - 1][playerCol] != '#') {
                         maze[playerRow][playerCol] = '.'; // Clear the previous position
                         playerRow--;
@@ -69,7 +72,7 @@ public class LavenderTown extends City {
                 case 'l':
                     if (maze[playerRow][playerCol - 2] != '#') {
                         maze[playerRow][playerCol] = '.'; // Clear the previous position
-                        playerCol-=2;
+                        playerCol -= 2;
                         path.push("left");
                     } else {
                         System.out.println("Invalid move. Try again.");
@@ -78,7 +81,7 @@ public class LavenderTown extends City {
                 case 'r':
                     if ((maze[playerRow][playerCol + 2] != '#')) {
                         maze[playerRow][playerCol] = '.'; // Clear the previous position
-                        playerCol+=2;
+                        playerCol += 2;
                         path.push("right");
                     } else {
                         System.out.println("Invalid move. Try again.");
@@ -87,22 +90,22 @@ public class LavenderTown extends City {
                 default:
                     System.out.println("Invalid direction. Try again.");
             }
-            
+
             // Check for Ghastly encounter
             if (maze[playerRow][playerCol] == 'G') {
                 maze[playerRow][playerCol] = 'Y';
                 displayMaze(playerRow, playerCol);
                 System.out.println("Oh no! You encountered a Ghastly and got caught. \nGame Over.");
-                System.exit(0);
+                exitMaze = true; // Set the exit flag to true
             }
-            
-            if(maze[playerRow][playerCol] == 'E'){
+
+            if (maze[playerRow][playerCol] == 'E') {
                 maze[playerRow][playerCol] = 'Y';
                 displayMaze(playerRow, playerCol);
                 System.out.println("Congratulations! You've reached the end of the maze");
-                System.exit(0);
+                exitMaze = true; // Set the exit flag to true
             }
-            
+
             // Update player's position in the maze
             maze[playerRow][playerCol] = 'Y';
         }
