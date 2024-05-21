@@ -6,6 +6,7 @@ package com.mycompany.pokemon;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
+import javax.swing.JFrame;
 
 /**
  *
@@ -269,8 +270,8 @@ public class POKEMON {
                             break;
                         case "SaffronCity":
                             // Handle Rival's Race
-                            RivalRace rr =new RivalRace();
-                            rr.call();
+                            RivalRace rr =new RivalRace(saveNumber);
+                            rr.run();
                             break;
                         default:
                             System.out.println("Invalid choice!");
@@ -303,28 +304,28 @@ public class POKEMON {
 
     }
 
-    public String checkWildPokemon(String location) {
+    public static String checkWildPokemon(String location) {
         switch (location) {
             case "ViridianCity":
-                return "[Weddle, Kakuna, Caterpie are common]";
+                return "[Weddle, Kakuna, Caterpie]";
             case "PalletTown":
-                return "[Pidgey, Rattata, Meowth are common]";
+                return "[Pidgey, Rattata, Meowth]";
             case "CeruleanCity":
-                return "[Weedle, Caterpie, Oddish are common]";
+                return "[Weedle, Caterpie, Oddish]";
             case "SaffronCity":
-                return "[Pidgey, Pidgeotto, Rattata are common]";
+                return "[Pidgey, Pidgeotto, Rattata]";
             case "VermilionCity":
-                return "[Ekans, Sandshrew, Spearow are common]";
+                return "[Ekans, Sandshrew, Spearow]";
             case "CeladonCity":
-                return "[Spearow, Rattata, Doduo are common]";
+                return "[Spearow, Rattata, Doduo]";
             case "FuchsiaCity":
-                return "[Spearow, Doduo, Raticate are common]";
+                return "[Spearow, Doduo, Raticate]";
             case "LavenderTown":
-                return "[Oddish, Bellsprout, Pidgey are common]";
+                return "[Oddish, Bellsprout, Pidgey]";
             case "PewterCity":
-                return "[Pidgey, Spearow, Rattata are common]";
+                return "[Pidgey, Spearow, Rattata]";
             case "CinnabarIsland":
-                return "[Pidgeotto, Ponyta, Koffing are common]";
+                return "[Pidgeotto, Ponyta, Koffing]";
             default:
                 return "No information available for wild Pokémon in this location.";
         }

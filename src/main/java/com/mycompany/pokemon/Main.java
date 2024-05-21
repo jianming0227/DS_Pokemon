@@ -16,9 +16,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-        POKEMON game1 = new POKEMON();
-
-        game1.startPage();
+//        POKEMON game1 = new POKEMON();
+//
+//        game1.startPage();
+//        
+        StartPage FirstPageFrame = new StartPage();
+        FirstPageFrame.setVisible(true);
+        FirstPageFrame.pack();
+        FirstPageFrame.setLocationRelativeTo(null);
 
     }
 }

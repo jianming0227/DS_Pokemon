@@ -14,6 +14,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -44,7 +45,11 @@ public class ConnectDatabase {
             resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 name = resultSet.getString("name");
+                if (name == null) {
+                    name = "empty"; // Set name to empty string if it's null
+                }
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -63,12 +68,12 @@ public class ConnectDatabase {
             }
         }
 
-        return name;
+        return name != null ? name : "empty"; // Return name if not null, otherwise return empty string
     }
 
     public static String checkGame(int saveNumber) {
         String name = getName(saveNumber);
-        if (name == null) {
+        if (name == "empty") {
             return "new";
         } else {
             return "override";
@@ -76,23 +81,16 @@ public class ConnectDatabase {
     }
 
     public static void updateName(int saveNumber, String playerName) throws SQLException {
-        Connection connection = null;
-        PreparedStatement statement = null;
+        String sql = "UPDATE users SET name = ? WHERE id = ?";
 
-        try {
-            connection = getConnection();
-            String sql = "UPDATE users SET name = ? WHERE id = ?";
-            statement = connection.prepareStatement(sql);
-            statement.setString(1, playerName);
-            statement.setInt(2, saveNumber);
-            statement.executeUpdate();
-        } finally {
-            if (statement != null) {
-                statement.close();
-            }
-            if (connection != null) {
-                connection.close();
-            }
+        try (
+                Connection connection = getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(sql);) {
+            preparedStatement.setString(1, playerName);
+            preparedStatement.setInt(2, saveNumber);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println("Database connection error:");
+            e.printStackTrace();
         }
     }
 
@@ -138,8 +136,6 @@ public class ConnectDatabase {
 
             // Execute the SELECT statement
             ResultSet resultSet = selectStatement.executeQuery();
-            
-            
 
             // Check if the result set has data
             if (resultSet.next()) {
@@ -324,6 +320,40 @@ public class ConnectDatabase {
         }
     }
 
+    public static String[] showMyPokemonGUI(int saveNumber) {
+        String sql = "SELECT pokemon_name, Level, Type, Hp, Xp, Move1, Move2, Move3, Move4, StrongAgainst, WeakAgainst, dmg1, dmg2, dmg3, dmg FROM player_pokemon WHERE player_id = ?";
+        String[] pokemon = new String[15];
+
+        try (Connection connection = getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+            preparedStatement.setInt(1, saveNumber);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                pokemon[0] = resultSet.getString("pokemon_name");
+                pokemon[1] = String.valueOf(resultSet.getInt("Level"));
+                pokemon[2] = resultSet.getString("Type");
+                pokemon[3] = String.valueOf(resultSet.getInt("Hp"));
+                pokemon[4] = String.valueOf(resultSet.getInt("Xp"));
+                pokemon[5] = resultSet.getString("Move1");
+                pokemon[6] = resultSet.getString("Move2");
+                pokemon[7] = resultSet.getString("Move3");
+                pokemon[8] = resultSet.getString("Move4");
+                pokemon[9] = resultSet.getString("StrongAgainst");
+                pokemon[10] = resultSet.getString("WeakAgainst");
+                pokemon[11] = String.valueOf(resultSet.getInt("dmg1"));
+                pokemon[12] = String.valueOf(resultSet.getInt("dmg2"));
+                pokemon[13] = String.valueOf(resultSet.getInt("dmg3"));
+                pokemon[14] = String.valueOf(resultSet.getInt("dmg"));
+            }
+        } catch (SQLException e) {
+            System.err.println("Database connection error:");
+            e.printStackTrace();
+        }
+
+        return pokemon;
+    }
+
     public static void showMyBadges(int saveNumber) {
         String sql = "SELECT badges1, badges2, badges3, badges4, badges5, badges6, badges7, badges8 FROM users WHERE id = ?";
 
@@ -353,6 +383,37 @@ public class ConnectDatabase {
             System.err.println("Database connection error:");
             e.printStackTrace();
         }
+    }
+
+    public static String[] showMyBadgesGUI(int saveNumber) {
+        String sql = "SELECT badges1, badges2, badges3, badges4, badges5, badges6, badges7, badges8 FROM users WHERE id = ?";
+        String[] badges = new String[8]; // Array to store badges
+
+        try (
+                Connection connection = getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(sql);) {
+            preparedStatement.setInt(1, saveNumber);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            // Iterate over the badges
+            int index = 0;
+            while (resultSet.next() && index < 8) {
+                String badge = resultSet.getString("badges" + (index + 1));
+                if (badge != null && !badge.isEmpty()) {
+                    badges[index] = badge; // Store the badge in the array
+                } else {
+                    badges[index] = "None"; // Store "None" if the badge is empty
+                }
+                index++;
+            }
+            // Fill remaining array slots with "None"
+            for (int i = index; i < 8; i++) {
+                badges[i] = "None";
+            }
+        } catch (SQLException e) {
+            System.err.println("Database connection error:");
+            e.printStackTrace();
+        }
+        return badges;
     }
 
     public static void updateBadges(int saveNumber, String badgeName) {
@@ -443,6 +504,10 @@ public class ConnectDatabase {
                         // Call the levelUp method
                         levelUp(saveNumber, pokemonName);
                         int updatedLevel = getLevel(saveNumber);
+                        LevelUpPage levelUpPage = new LevelUpPage(updatedLevel);
+                        levelUpPage.setVisible(true);
+                        levelUpPage.pack();
+                        levelUpPage.setLocationRelativeTo(null);
                         System.out.println(getPokemonName(saveNumber) + " leveled up.");
                         System.out.println(getPokemonName(saveNumber) + " [Level " + currentLevel + " --> Level " + updatedLevel + "]");
 
@@ -456,6 +521,10 @@ public class ConnectDatabase {
                         // Call the levelUp method
                         levelUp(saveNumber, pokemonName);
                         int updatedLevel = getLevel(saveNumber);
+                        LevelUpPage levelUpPage = new LevelUpPage(updatedLevel);
+                        levelUpPage.setVisible(true);
+                        levelUpPage.pack();
+                        levelUpPage.setLocationRelativeTo(null);
                         System.out.println(getPokemonName(saveNumber) + " leveled up.");
                         System.out.println(getPokemonName(saveNumber) + " [Level " + currentLevel + " --> Level " + updatedLevel + "]");
 
@@ -469,6 +538,10 @@ public class ConnectDatabase {
                         // Call the levelUp method
                         levelUp(saveNumber, pokemonName);
                         int updatedLevel = getLevel(saveNumber);
+                        LevelUpPage levelUpPage = new LevelUpPage(updatedLevel);
+                        levelUpPage.setVisible(true);
+                        levelUpPage.pack();
+                        levelUpPage.setLocationRelativeTo(null);
                         System.out.println(getPokemonName(saveNumber) + " leveled up.");
                         System.out.println(getPokemonName(saveNumber) + " [Level " + currentLevel + " --> Level " + updatedLevel + "]");
 
@@ -800,11 +873,19 @@ public class ConnectDatabase {
                         if (level == 16) {
                             System.out.println("Oh? Your Bulbasaur is evolving......");
                             System.out.println("Your Bulbasaur is evolving into Ivysaur.");
+                            EvolutionPage evolutionPage = new EvolutionPage(saveNumber, pokemonName);
+                            evolutionPage.setVisible(true);
+                            evolutionPage.pack();
+                            evolutionPage.setLocationRelativeTo(null);
                             // Update pokemon column and Move3 in the player_pokemon table
                             updateEvolution(saveNumber, "Ivysaur", "Razor Leaf", 55, null, 0);
                         } else if (level == 25) {
                             System.out.println("Oh? Your Ivysaur is evolving......");
                             System.out.println("Your Ivysaur is evolving into Venusaur.");
+                            EvolutionPage evolutionPage = new EvolutionPage(saveNumber, pokemonName);
+                            evolutionPage.setVisible(true);
+                            evolutionPage.pack();
+                            evolutionPage.setLocationRelativeTo(null);
                             // Update pokemon column and Move4 in the player_pokemon table
                             updateEvolution(saveNumber, "Venusaur", null, 0, "Solar Beam", 120);
                         }
@@ -814,11 +895,19 @@ public class ConnectDatabase {
                         if (level == 16) {
                             System.out.println("Oh? Your Charmander is evolving......");
                             System.out.println("Your Charmander is evolving into Charmeleon.");
+                            EvolutionPage evolutionPage = new EvolutionPage(saveNumber, pokemonName);
+                            evolutionPage.setVisible(true);
+                            evolutionPage.pack();
+                            evolutionPage.setLocationRelativeTo(null);
                             // Update pokemon column and Move3 in the player_pokemon table
                             updateEvolution(saveNumber, "Charmeleon", "Fire Fang", 65, null, 0);
                         } else if (level == 36) {
                             System.out.println("Oh? Your Charmeleon is evolving......");
                             System.out.println("Your Charmeleon is evolving into Charizard.");
+                            EvolutionPage evolutionPage = new EvolutionPage(saveNumber, pokemonName);
+                            evolutionPage.setVisible(true);
+                            evolutionPage.pack();
+                            evolutionPage.setLocationRelativeTo(null);
                             // Update pokemon column and Move4 in the player_pokemon table
                             updateEvolution(saveNumber, "Charizard", null, 0, "Inferno", 100);
                         }
@@ -828,11 +917,19 @@ public class ConnectDatabase {
                         if (level == 16) {
                             System.out.println("Oh? Your Squirtle is evolving......");
                             System.out.println("Your Squirtle is evolving into Wartortle.");
+                            EvolutionPage evolutionPage = new EvolutionPage(saveNumber, pokemonName);
+                            evolutionPage.setVisible(true);
+                            evolutionPage.pack();
+                            evolutionPage.setLocationRelativeTo(null);
                             // Update pokemon column and Move3 in the player_pokemon table
                             updateEvolution(saveNumber, "Wartortle", "Water Pulse", 60, null, 0);
                         } else if (level == 36) {
                             System.out.println("Oh? Your Wartortle is evolving......");
                             System.out.println("Your Wartortle is evolving into Blastoise.");
+                            EvolutionPage evolutionPage = new EvolutionPage(saveNumber, pokemonName);
+                            evolutionPage.setVisible(true);
+                            evolutionPage.pack();
+                            evolutionPage.setLocationRelativeTo(null);
                             // Update pokemon column and Move4 in the player_pokemon table
                             updateEvolution(saveNumber, "Blastoise", null, 0, "Wave Crash", 120);
                         }
@@ -886,7 +983,7 @@ public class ConnectDatabase {
             for (int i = 0; i < parameters1.size(); i++) {
                 updateStatement.setString(i + 1, parameters1.get(i));
             }
-            
+
             for (int i = 0; i < parameters2.size(); i++) {
                 updateStatement.setInt(i + 3, parameters2.get(i));
             }
@@ -1364,7 +1461,27 @@ public class ConnectDatabase {
         int dmg4Leader = Integer.parseInt(pokemonInfo[11]);
 
         String[] strongAgainstTypePlayer = playerPokemonInfo[14].split(" · ");
+        String[] weakAgainstTypePlayer = playerPokemonInfo[15].split(" · ");
         String[] typeLeader = pokemonInfo[3].split(" · ");
+
+        boolean isSuperEffective;
+        boolean isNotVeryEffective;
+        for (String strongType : strongAgainstTypePlayer) {
+            for (String leaderType : typeLeader) {
+                if (strongType.equalsIgnoreCase(leaderType)) {
+                    isSuperEffective = true;
+                    // No need for the break here
+                }
+            }
+        }
+        for (String weakType : weakAgainstTypePlayer) {
+            for (String leaderType : typeLeader) {
+                if (weakType.equalsIgnoreCase(leaderType)) {
+                    isNotVeryEffective = true;
+                    // No need for the break here
+                }
+            }
+        }
 
         System.out.println("Wild " + pokemonInfo[0] + " appear!");
         System.out.println("Go " + playerPokemonInfo[0] + "!");
@@ -1410,30 +1527,46 @@ public class ConnectDatabase {
             switch (moveChoice) {
                 case 1:
                     if (playerPokemonInfo[6] != null) {
+                        hpLeader -= dmg1Player;
+                        if (hpLeader < 0) {
+                            hpLeader = 0;
+                        }
 
                         System.out.println(playerPokemonInfo[0] + " uses " + playerPokemonInfo[6]);
-                        System.out.println(pokemonInfo[0] + "'s HP drops slightly. [" + pokemonInfo[0] + " HP: " + (hpLeader -= dmg1Player) + "/" + pokemonInfo[2] + "]");
+                        System.out.println(pokemonInfo[0] + "'s HP drops slightly. [" + pokemonInfo[0] + " HP: " + hpLeader + "/" + pokemonInfo[2] + "]");
                         System.out.println();
                     }
                     break;
                 case 2:
                     if (playerPokemonInfo[8] != null) {
+                        hpLeader -= dmg2Player;
+                        if (hpLeader < 0) {
+                            hpLeader = 0;
+                        }
                         System.out.println(playerPokemonInfo[0] + " uses " + playerPokemonInfo[8]);
-                        System.out.println(pokemonInfo[0] + "'s HP drops slightly. [" + pokemonInfo[0] + " HP: " + (hpLeader -= dmg2Player) + "/" + pokemonInfo[2] + "]");
+                        System.out.println(pokemonInfo[0] + "'s HP drops slightly. [" + pokemonInfo[0] + " HP: " + hpLeader + "/" + pokemonInfo[2] + "]");
                         System.out.println();
                     }
                     break;
                 case 3:
                     if (playerPokemonInfo[10] != null) {
+                        hpLeader -= dmg3Player;
+                        if (hpLeader < 0) {
+                            hpLeader = 0;
+                        }
                         System.out.println(playerPokemonInfo[0] + " uses " + playerPokemonInfo[10]);
-                        System.out.println(pokemonInfo[0] + "'s HP drops slightly. [" + pokemonInfo[0] + " HP: " + (hpLeader -= dmg3Player) + "/" + pokemonInfo[2] + "]");
+                        System.out.println(pokemonInfo[0] + "'s HP drops slightly. [" + pokemonInfo[0] + " HP: " + hpLeader + "/" + pokemonInfo[2] + "]");
                         System.out.println();
                     }
                     break;
                 case 4:
                     if (playerPokemonInfo[12] != null) {
+                        hpLeader -= dmg4Player;
+                        if (hpLeader < 0) {
+                            hpLeader = 0;
+                        }
                         System.out.println(playerPokemonInfo[0] + " uses " + playerPokemonInfo[12]);
-                        System.out.println(pokemonInfo[0] + "'s HP drops slightly. [" + pokemonInfo[0] + " HP: " + (hpLeader -= dmg4Player) + "/" + pokemonInfo[2] + "]");
+                        System.out.println(pokemonInfo[0] + "'s HP drops slightly. [" + pokemonInfo[0] + " HP: " + hpLeader + "/" + pokemonInfo[2] + "]");
                         System.out.println();
                     }
                     break;

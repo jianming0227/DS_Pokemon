@@ -128,7 +128,7 @@ public class Maps {
     System.out.println(getCityNameWithAsterisk("ViridianCity", currentLocation) + "        |                |                      |");
     System.out.println("      |               |                |                      |");
     System.out.println("      |               |                |                      |");
-    System.out.println("      |               |       " + getCityNameWithAsterisk("VermillionCity", currentLocation) + "----------------|");
+    System.out.println("      |               |       " + getCityNameWithAsterisk("VermilionCity", currentLocation) + "----------------|");
     System.out.println("      |               |                                       |");
     System.out.println(getCityNameWithAsterisk("PalletTown", currentLocation) + "          |                                       |");
     System.out.println("      |               |                                       |");
