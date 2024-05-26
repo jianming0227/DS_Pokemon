@@ -15,10 +15,12 @@ import java.util.logging.Logger;
  */
 public class TalkToMomPage extends javax.swing.JFrame {
 
+    static int saveNumber;
     /**
      * Creates new form TalkToMomPage
      */
-    public TalkToMomPage() {
+    public TalkToMomPage(int saveNumber) {
+        this.saveNumber = saveNumber;
         initComponents();
     }
 
@@ -95,7 +97,7 @@ public class TalkToMomPage extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TalkToMomPage().setVisible(true);
+                new TalkToMomPage(saveNumber).setVisible(true);
             }
         });
     }

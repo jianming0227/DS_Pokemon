@@ -161,9 +161,9 @@ public class ShowMyBadges extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1080, 720));
-        setMinimumSize(new java.awt.Dimension(1080, 720));
-        setPreferredSize(new java.awt.Dimension(1080, 720));
+        setMaximumSize(new java.awt.Dimension(1080, 760));
+        setMinimumSize(new java.awt.Dimension(1080, 760));
+        setPreferredSize(new java.awt.Dimension(1080, 760));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N

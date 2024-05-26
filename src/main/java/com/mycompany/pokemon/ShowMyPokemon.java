@@ -169,7 +169,7 @@ public class ShowMyPokemon extends javax.swing.JFrame {
                 Type.setIcon(resizedIcon7);
                 Move1Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves\\3.png");
                 Move1.setIcon(Move1Image);
-                Move2Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves4.png");
+                Move2Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves\\4.png");
                 Move2.setIcon(Move2Image);
                 if (move3 != null) {
                     Move3Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves\\2.png");
@@ -207,7 +207,7 @@ public class ShowMyPokemon extends javax.swing.JFrame {
                 Type.setIcon(resizedIcon8);
                 Move1Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves\\3.png");
                 Move1.setIcon(Move1Image);
-                Move2Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves4.png");
+                Move2Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves\\4.png");
                 Move2.setIcon(Move2Image);
                 if (move3 != null) {
                     Move3Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves\\2.png");
@@ -283,7 +283,7 @@ public class ShowMyPokemon extends javax.swing.JFrame {
                 Type.setIcon(resizedIcon10);
                 Move1Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves\\5.png");
                 Move1.setIcon(Move1Image);
-                Move2Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves6.png");
+                Move2Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves\\6.png");
                 Move2.setIcon(Move2Image);
                 if (move3 != null) {
                     Move3Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves\\2.png");
@@ -321,7 +321,7 @@ public class ShowMyPokemon extends javax.swing.JFrame {
                 Type.setIcon(resizedIcon11);
                 Move1Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves\\5.png");
                 Move1.setIcon(Move1Image);
-                Move2Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves6.png");
+                Move2Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves\\6.png");
                 Move2.setIcon(Move2Image);
                 if (move3 != null) {
                     Move3Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves\\2.png");
@@ -359,7 +359,7 @@ public class ShowMyPokemon extends javax.swing.JFrame {
                 Type.setIcon(resizedIcon12);
                 Move1Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves\\9.png");
                 Move1.setIcon(Move1Image);
-                Move2Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves10.png");
+                Move2Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves\\10.png");
                 Move2.setIcon(Move2Image);
                 if (move3 != null) {
                     Move3Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves\\2.png");
@@ -397,7 +397,7 @@ public class ShowMyPokemon extends javax.swing.JFrame {
                 Type.setIcon(resizedIcon13);
                 Move1Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves\\9.png");
                 Move1.setIcon(Move1Image);
-                Move2Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves10.png");
+                Move2Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves\\10.png");
                 Move2.setIcon(Move2Image);
                 if (move3 != null) {
                     Move3Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves\\2.png");
@@ -435,7 +435,7 @@ public class ShowMyPokemon extends javax.swing.JFrame {
                 Type.setIcon(resizedIcon14);
                 Move1Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves\\9.png");
                 Move1.setIcon(Move1Image);
-                Move2Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves10.png");
+                Move2Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves\\10.png");
                 Move2.setIcon(Move2Image);
                 if (move3 != null) {
                     Move3Image = new ImageIcon("C:\\Users\\User\\Downloads\\Moves\\2.png");
@@ -507,33 +507,43 @@ public class ShowMyPokemon extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        WeakT.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         WeakT.setText("jLabel1");
         getContentPane().add(WeakT, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 560, 190, 50));
 
+        StrengthT.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         StrengthT.setText("jLabel1");
         getContentPane().add(StrengthT, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 560, 210, 50));
 
+        Move4T.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         Move4T.setText("jLabel1");
-        getContentPane().add(Move4T, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 460, 150, 50));
+        getContentPane().add(Move4T, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 460, 190, 50));
 
+        Move3T.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         Move3T.setText("jLabel1");
-        getContentPane().add(Move3T, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 350, 160, 50));
+        getContentPane().add(Move3T, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 350, 200, 50));
 
+        Move2T.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         Move2T.setText("jLabel1");
-        getContentPane().add(Move2T, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 460, 140, 50));
+        getContentPane().add(Move2T, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 460, 200, 50));
 
+        Move1T.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         Move1T.setText("jLabel1");
-        getContentPane().add(Move1T, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 350, 150, 50));
+        getContentPane().add(Move1T, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 350, 200, 50));
 
+        XpT.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
         XpT.setText("jLabel1");
         getContentPane().add(XpT, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 240, 170, 60));
 
+        HpT.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
         HpT.setText("jLabel1");
         getContentPane().add(HpT, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 250, 150, 50));
 
+        TypeT.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         TypeT.setText("jLabel1");
         getContentPane().add(TypeT, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 140, 160, 50));
 
+        LevelT.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
         LevelT.setText("jLabel1");
         getContentPane().add(LevelT, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 140, 150, 50));
 
@@ -552,9 +562,8 @@ public class ShowMyPokemon extends javax.swing.JFrame {
         Type.setPreferredSize(new java.awt.Dimension(80, 80));
         getContentPane().add(Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 120, -1, -1));
 
-        PokemonImg.setText("jLabel5");
         PokemonImg.setPreferredSize(new java.awt.Dimension(335, 470));
-        getContentPane().add(PokemonImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 160, 440, -1));
+        getContentPane().add(PokemonImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 160, 440, -1));
 
         Hp.setText("jLabel1");
         Hp.setPreferredSize(new java.awt.Dimension(80, 80));
@@ -597,7 +606,6 @@ public class ShowMyPokemon extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 660, 280, 50));
 
-        LowerImg.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\Downloads\\Untitled design.png")); // NOI18N
         LowerImg.setText("jLabel1");
         getContentPane().add(LowerImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1080, 620));
 
