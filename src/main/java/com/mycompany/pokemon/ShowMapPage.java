@@ -26,16 +26,16 @@ public class ShowMapPage extends javax.swing.JFrame {
         
         String currentLocation = ConnectDatabase.getLocation(saveNumber);
         Location.setText(currentLocation);
-        String palletTownPath = "C:\\Users\\User\\Downloads\\Pallet Town.png";
-        String saffronCityPath = "C:\\Users\\User\\Downloads\\Saffron City.png";
-        String fuchsiaCityPath = "C:\\Users\\User\\Downloads\\Fuchsia City.png";
-        String lavenderTownPath = "C:\\Users\\User\\Downloads\\Lavender Town.png";
-        String pewterCityPath = "C:\\Users\\User\\Downloads\\Pewter City.png";
-        String cinnabarIslandPath = "C:\\Users\\User\\Downloads\\Cinnabar Island.png";
-        String celadonCityPath = "C:\\Users\\User\\Downloads\\Celadon City.png";
-        String ceruleanCityPath = "C:\\Users\\User\\Downloads\\Cerulean City.png";
-        String viridianCityPath = "C:\\Users\\User\\Downloads\\Viridian City.png";
-        String vermilionCityPath = "C:\\Users\\User\\Downloads\\Vermilion City.png";
+        String palletTownPath = "C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMap\\Pallet Town.png";
+        String saffronCityPath = "C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMap\\Saffron City.png";
+        String fuchsiaCityPath = "C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMap\\Fuchsia City.png";
+        String lavenderTownPath = "C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMap\\Lavender Town.png";
+        String pewterCityPath = "C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMap\\Pewter City.png";
+        String cinnabarIslandPath = "C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMap\\Cinnabar Island.png";
+        String celadonCityPath = "C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMap\\Celadon City.png";
+        String ceruleanCityPath = "C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMap\\Cerulean City.png";
+        String viridianCityPath = "C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMap\\Viridian City.png";
+        String vermilionCityPath = "C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMap\\Vermilion City.png";
         ImageIcon palletTownImage = new ImageIcon(palletTownPath);
         ImageIcon saffronCityImage = new ImageIcon(saffronCityPath);
         ImageIcon fuchsiaCityImage = new ImageIcon(fuchsiaCityPath);

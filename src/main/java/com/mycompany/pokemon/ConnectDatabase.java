@@ -24,9 +24,9 @@ import java.util.Scanner;
 public class ConnectDatabase {
 
     // JDBC URL, username, and password of MySQL server
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/pokemon";
+    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/pokemonDB";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "8888";
+    private static final String PASSWORD = "@Shy0929";
 
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);

@@ -86,7 +86,7 @@ public class ChooseSlotPage extends javax.swing.JFrame {
             String save3 = ConnectDatabase.checkGame(3);
             Save3.setText(save3);
 
-            File fontStyle = new File("C:/Users/User/Downloads/pokemon-classic/Pokemon Classic.ttf");
+            File fontStyle = new File("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\Pokemon Classic.ttf");
             if (!fontStyle.exists()) {
                 System.err.println("Font file not found.");
                 return;
@@ -229,7 +229,7 @@ public class ChooseSlotPage extends javax.swing.JFrame {
         jLabel3.setText("Start a new Adventure:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\Downloads\\LoadGame (1).png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ChooseSlotPage\\LoadGame (1).png")); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 450));
 

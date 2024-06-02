@@ -38,17 +38,17 @@ public class MazeTile {
         // Assign image by referring character in mazeArr
         switch (tileRep) {
             case '#':
-                tile = new ImageIcon("C:\\Users\\User\\Downloads\\PokeMaze\\PokeMaze\\wall (1).png");
+                tile = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\PokeMaze\\PokeMaze\\wall (1).png");
                 break;
             case '.':
-                tile = new ImageIcon("C:\\Users\\User\\Downloads\\PokeMaze\\PokeMaze\\floor (1)_1.png");
+                tile = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\PokeMaze\\PokeMaze\\floor (1)_1.png");
                 break;
             case 'G':
-                tile = new ImageIcon("C:\\Users\\User\\Downloads\\PokeMaze\\PokeMaze\\gastly_1.png");
+                tile = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\PokeMaze\\PokeMaze\\gastly_1.png");
                 break;
             default:
                 // Handle unexpected values of tileRep here ('S' and 'E')
-                tile = new ImageIcon("C:\\Users\\User\\Downloads\\PokeMaze\\PokeMaze\\floor (1)_1.png");
+                tile = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\PokeMaze\\PokeMaze\\floor (1)_1.png");
                 break;
         }
         onMap = tile.getImage();

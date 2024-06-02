@@ -27,10 +27,10 @@ public class Player {
 	public Player() {
 		this.x = 1;
 		this.y = 0;
-		ImageIcon imgD = new ImageIcon("C:\\Users\\User\\Downloads\\PokeMaze\\PokeMaze\\playerD.png");  //player facing down
-		ImageIcon imgU = new ImageIcon("C:\\Users\\User\\Downloads\\PokeMaze\\PokeMaze\\playerU.png");  //player facing up
-		ImageIcon imgL = new ImageIcon("C:\\Users\\User\\Downloads\\PokeMaze\\PokeMaze\\playerL.png");  //player facing left
-		ImageIcon imgR = new ImageIcon("C:\\Users\\User\\Downloads\\PokeMaze\\PokeMaze\\playerR.png");  //player facing right
+		ImageIcon imgD = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\PokeMaze\\PokeMaze\\playerD.png");  //player facing down
+		ImageIcon imgU = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\PokeMaze\\PokeMaze\\playerU.png");  //player facing up
+		ImageIcon imgL = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\PokeMaze\\PokeMaze\\playerL.png");  //player facing left
+		ImageIcon imgR = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\PokeMaze\\PokeMaze\\playerR.png");  //player facing right
 		this.playerDown = imgD.getImage();
 		this.playerUp = imgU.getImage();
 		this.playerLeft = imgL.getImage();

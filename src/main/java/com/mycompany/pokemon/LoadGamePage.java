@@ -95,7 +95,7 @@ public class LoadGamePage extends javax.swing.JFrame {
         });
         getContentPane().add(DoneButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 610, 180, 70));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\Downloads\\WhatsApp Image 2024-05-12 at 8.34.12 PM.jpeg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\LoadPage\\WhatsApp Image 2024-05-12 at 8.34.12 PM.jpeg")); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 720));
 
@@ -138,10 +138,10 @@ public class LoadGamePage extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "OAK: An amazing choice. Best of luck!", "Result", JOptionPane.INFORMATION_MESSAGE);
             try {
                 MainMenuPage mainMenuPageFrame = new MainMenuPage(saveGameButtonClicked);
-                this.dispose();
                 mainMenuPageFrame.setVisible(true);
                 mainMenuPageFrame.pack();
                 mainMenuPageFrame.setLocationRelativeTo(null);
+                this.dispose();
             } catch (FontFormatException ex) {
                 Logger.getLogger(LoadGamePage.class.getName()).log(Level.SEVERE, null, ex);
             }

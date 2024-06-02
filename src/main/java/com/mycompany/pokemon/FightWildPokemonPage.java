@@ -239,55 +239,55 @@ public class FightWildPokemonPage extends javax.swing.JFrame {
 
         switch (NamePlayer.getText()) {
             case "Bulbasaur":
-                PokemonImage = new ImageIcon("C:\\Users\\User\\Downloads\\Bulbasaur.png");
+                PokemonImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMyPokemon\\Bulbasaur.png");
                 Image resizedImage1 = PokemonImage.getImage().getScaledInstance(283, 189, Image.SCALE_SMOOTH);
                 ImageIcon resizedIcon1 = new ImageIcon(resizedImage1);
                 PokemonImg.setIcon(resizedIcon1);
                 break;
             case "Ivysaur":
-                PokemonImage = new ImageIcon("C:\\Users\\User\\Downloads\\Untitled design\\1.png");
+                PokemonImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Untitled design\\1.png");
                 Image resizedImage2 = PokemonImage.getImage().getScaledInstance(283, 189, Image.SCALE_SMOOTH);
                 ImageIcon resizedIcon2 = new ImageIcon(resizedImage2);
                 PokemonImg.setIcon(resizedIcon2);
                 break;
             case "Venusaur":
-                PokemonImage = new ImageIcon("C:\\Users\\User\\Downloads\\Untitled design\\2.png");
+                PokemonImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Untitled design\\2.png");
                 Image resizedImage3 = PokemonImage.getImage().getScaledInstance(283, 189, Image.SCALE_SMOOTH);
                 ImageIcon resizedIcon3 = new ImageIcon(resizedImage3);
                 PokemonImg.setIcon(resizedIcon3);
                 break;
             case "Charmander":
-                PokemonImage = new ImageIcon("C:\\Users\\User\\Downloads\\Charmander.png");
+                PokemonImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMyPokemon\\Charmander.png");
                 Image resizedImage4 = PokemonImage.getImage().getScaledInstance(283, 189, Image.SCALE_SMOOTH);
                 ImageIcon resizedIcon4 = new ImageIcon(resizedImage4);
                 PokemonImg.setIcon(resizedIcon4);
                 break;
             case "Charmeleon":
-                PokemonImage = new ImageIcon("C:\\Users\\User\\Downloads\\Untitled design\\3.png");
+                PokemonImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Untitled design\\3.png");
                 Image resizedImage5 = PokemonImage.getImage().getScaledInstance(283, 189, Image.SCALE_SMOOTH);
                 ImageIcon resizedIcon5 = new ImageIcon(resizedImage5);
                 PokemonImg.setIcon(resizedIcon5);
                 break;
             case "Charizard":
-                PokemonImage = new ImageIcon("C:\\Users\\User\\Downloads\\Untitled design\\4.png");
+                PokemonImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Untitled design\\4.png");
                 Image resizedImage6 = PokemonImage.getImage().getScaledInstance(283, 189, Image.SCALE_SMOOTH);
                 ImageIcon resizedIcon6 = new ImageIcon(resizedImage6);
                 PokemonImg.setIcon(resizedIcon6);
                 break;
             case "Squirtle":
-                PokemonImage = new ImageIcon("C:\\Users\\User\\Downloads\\Squirtle.png");
+                PokemonImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMyPokemon\\Squirtle.png");
                 Image resizedImage7 = PokemonImage.getImage().getScaledInstance(283, 189, Image.SCALE_SMOOTH);
                 ImageIcon resizedIcon7 = new ImageIcon(resizedImage7);
                 PokemonImg.setIcon(resizedIcon7);
                 break;
             case "Wartortle":
-                PokemonImage = new ImageIcon("C:\\Users\\User\\Downloads\\Untitled design\\5.png");
+                PokemonImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Untitled design\\5.png");
                 Image resizedImage8 = PokemonImage.getImage().getScaledInstance(283, 189, Image.SCALE_SMOOTH);
                 ImageIcon resizedIcon8 = new ImageIcon(resizedImage8);
                 PokemonImg.setIcon(resizedIcon8);
                 break;
             case "Blastoise":
-                PokemonImage = new ImageIcon("C:\\Users\\User\\Downloads\\Untitled design\\6.png");
+                PokemonImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Untitled design\\6.png");
                 Image resizedImage9 = PokemonImage.getImage().getScaledInstance(283, 189, Image.SCALE_SMOOTH);
                 ImageIcon resizedIcon9 = new ImageIcon(resizedImage9);
                 PokemonImg.setIcon(resizedIcon9);
@@ -300,139 +300,139 @@ public class FightWildPokemonPage extends javax.swing.JFrame {
         ImageIcon backgroundImage = null;
         switch (opponentInfo[0]) {
             case "Doduo":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\1.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\1.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Rattata":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\2.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\2.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Ponyta":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\3.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\3.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Spearow":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\4.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\4.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Dodrio":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\5.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\5.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Raticate":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\6.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\6.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Ekans":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\7.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\7.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Tangela":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\8.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\8.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Staryu":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\9.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\9.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Goldeen":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\10.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\10.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Poliwag":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\11.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\11.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Tentacool":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\12.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\12.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Oddish":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\13.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\13.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Venonat":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\14.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\14.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Gloom":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\15.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\15.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Weepinbell":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\16.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\16.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Farfetchd":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\17.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\17.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Ditto":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\18.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\18.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Pidgey":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\19.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\19.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Pidgeotto":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\20.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\20.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Vulpix":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\21.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\21.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Jigglypuff":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\22.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\22.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Voltorb":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\23.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\23.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Machop":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\24.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\24.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Magikarp":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\25.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\25.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Bellsprout":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\26.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\26.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Sandshrew":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\27.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\27.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Mankey":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\28.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\28.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Abra":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\29.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\29.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Meowth":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\30.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\30.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Growlithe":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\31.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\31.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Kadabra":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\32.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\32.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Caterpie":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\33.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\33.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Weedle":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Fight Wild Pokemon\\34.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Fight Wild Pokemon\\34.png");
                 Background.setIcon(backgroundImage);
                 break;
             default:

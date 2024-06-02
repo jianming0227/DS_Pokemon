@@ -49,7 +49,7 @@ public class StartPage extends javax.swing.JFrame {
         });
         jPanel1.add(StartButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 390, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\Downloads\\StartPage.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\StartPage\\StartPage - Copy.png")); // NOI18N
         jLabel2.setText("jLabel2");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 450));
 

@@ -53,7 +53,6 @@ public class LevelUpPage extends javax.swing.JFrame {
         Level.setText("jLabel2");
         getContentPane().add(Level, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 930, 100, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\Downloads\\Evolving\\7.png")); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
 

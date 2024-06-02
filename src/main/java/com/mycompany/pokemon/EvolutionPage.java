@@ -29,23 +29,23 @@ public class EvolutionPage extends javax.swing.JFrame {
         ImageIcon backgroundImage = null;
         switch (pokemonName) {
             case "Bulbasaur":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Evolving\\1.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Evolving\\1.png");
                 Background.setIcon(backgroundImage);
             case "Ivysaur":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Evolving\\2.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Evolving\\2.png");
                 Background.setIcon(backgroundImage);
                 break;
             case "Charmander":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Evolving\\3.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Evolving\\3.png");
                 Background.setIcon(backgroundImage);
             case "Charmeleon":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Evolving\\4.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Evolving\\4.png");
                 Background.setIcon(backgroundImage);
             case "Squirtle":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Evolving\\5.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Evolving\\5.png");
                 Background.setIcon(backgroundImage);
             case "Wartortle":
-                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Evolving\\6.png");
+                backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Evolving\\6.png");
                 Background.setIcon(backgroundImage);
             default:
                 // If the pokemon is not in the specified list, do nothing

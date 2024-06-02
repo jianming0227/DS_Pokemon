@@ -72,7 +72,7 @@ class MyFrame extends JFrame implements KeyListener, MouseListener, ActionListen
         add(myButton);
 
         //set the icon logo
-        ImageIcon image = new ImageIcon("C:\\Users\\User\\Downloads\\RivalRace\\RivalRace\\picture\\poke.jpg"); // create an ImageIcon
+        ImageIcon image = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\RivalRace\\RivalRace\\picture\\poke.jpg"); // create an ImageIcon
         setIconImage(image.getImage()); // change icon of this
     }
 
@@ -81,7 +81,7 @@ class MyFrame extends JFrame implements KeyListener, MouseListener, ActionListen
 
         Border border = BorderFactory.createLineBorder(Color.GREEN, 3);
 
-        ImageIcon originalIcon = new ImageIcon("C:\\Users\\User\\Downloads\\pokemapFinal.png");
+        ImageIcon originalIcon = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\RivalRace\\RivalRace\\picture\\pokemapFinal.png");
         Image originalImage = originalIcon.getImage();
         Image resizedImage = originalImage.getScaledInstance(550, 500, Image.SCALE_SMOOTH);
         ImageIcon resizedIcon = new ImageIcon(resizedImage);
@@ -90,7 +90,7 @@ class MyFrame extends JFrame implements KeyListener, MouseListener, ActionListen
 
         Font customFont = null;
         try {
-            customFont = Font.createFont(Font.TRUETYPE_FONT, new File("C:\\Users\\User\\Downloads\\RivalRace\\RivalRace\\Abhaya_Libre,Press_Start_2P\\Press_Start_2P\\PressStart2P-Regular.ttf")).deriveFont(Font.PLAIN, 30);
+            customFont = Font.createFont(Font.TRUETYPE_FONT, new File("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\RivalRace\\RivalRace\\Abhaya_Libre,Press_Start_2P\\Press_Start_2P\\PressStart2P-Regular.ttf")).deriveFont(Font.PLAIN, 30);
         } catch (IOException | FontFormatException e) {
             e.printStackTrace();
         }
@@ -114,7 +114,7 @@ class MyFrame extends JFrame implements KeyListener, MouseListener, ActionListen
     }
 
     private void setupCharacterOverlay() {
-        ImageIcon overlayIcon = new ImageIcon("C:\\Users\\User\\Downloads\\RivalRace\\RivalRace\\picture\\redFInal.png");
+        ImageIcon overlayIcon = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\RivalRace\\RivalRace\\picture\\redFInal.png");
         Image overlayImage = overlayIcon.getImage();
         Image resizedOverlayImage = overlayImage.getScaledInstance(45, 45, Image.SCALE_SMOOTH);
         ImageIcon resizedOverlayIcon = new ImageIcon(resizedOverlayImage);

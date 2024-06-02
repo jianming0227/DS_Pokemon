@@ -118,17 +118,18 @@ public class MainMenuPage extends javax.swing.JFrame {
         MoveToButton1.setContentAreaFilled(false);
         MoveToButton1.setBorderPainted(false);
 
-        String palletTownPath = "C:\\Users\\User\\Downloads\\MainMenu (1).png";
-        String saffronCityPath = "C:\\Users\\User\\Downloads\\MainMenu.png";
-        String fuchsiaCityPath = "C:\\Users\\User\\Downloads\\MainMenu (2).png";
-        String lavenderTownPath = "C:\\Users\\User\\Downloads\\MainMenu (3).png";
-        String othersPath = "C:\\Users\\User\\Downloads\\MainMenu (4).png";
+        String palletTownPath = "C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\MainMenu\\MainMenu (1).png";
+        String saffronCityPath = "C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\MainMenu\\MainMenu.png";
+        String fuchsiaCityPath = "C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\MainMenu\\MainMenu (2).png";
+        String lavenderTownPath = "C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\MainMenu\\MainMenu (3).png";
+        String othersPath = "C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\MainMenu\\MainMenu (4).png";
         ImageIcon palletTownImage = new ImageIcon(palletTownPath);
         ImageIcon saffronCityImage = new ImageIcon(saffronCityPath);
         ImageIcon fuchsiaCityImage = new ImageIcon(fuchsiaCityPath);
         ImageIcon lavenderTownImage = new ImageIcon(lavenderTownPath);
         ImageIcon othersImage = new ImageIcon(othersPath);
-
+        String fontPath ="C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\Pokemon Classic.ttf";
+        
         if (Location.getText() != null && Location.getText().equals("PalletTown")) {
 
             MainMenuBackGround.setIcon(palletTownImage);
@@ -141,7 +142,7 @@ public class MainMenuPage extends javax.swing.JFrame {
             PokeMaze.setEnabled(false);
 
             try {
-                File fontStyle = new File("C:/Users/User/Downloads/pokemon-classic/Pokemon Classic.ttf");
+                File fontStyle = new File(fontPath);
                 if (!fontStyle.exists()) {
                     System.err.println("Font file not found.");
                     return;
@@ -171,7 +172,7 @@ public class MainMenuPage extends javax.swing.JFrame {
             
 
             try {
-                File fontStyle = new File("C:/Users/User/Downloads/pokemon-classic/Pokemon Classic.ttf");
+                File fontStyle = new File(fontPath);
                 if (!fontStyle.exists()) {
                     System.err.println("Font file not found.");
                     return;
@@ -200,7 +201,7 @@ public class MainMenuPage extends javax.swing.JFrame {
             RivalRace.setEnabled(false);
 
             try {
-                File fontStyle = new File("C:/Users/User/Downloads/pokemon-classic/Pokemon Classic.ttf");
+                File fontStyle = new File(fontPath);
                 if (!fontStyle.exists()) {
                     System.err.println("Font file not found.");
                     return;
@@ -230,7 +231,7 @@ public class MainMenuPage extends javax.swing.JFrame {
             SafariZone.setEnabled(false);
 
             try {
-                File fontStyle = new File("C:/Users/User/Downloads/pokemon-classic/Pokemon Classic.ttf");
+                File fontStyle = new File(fontPath);
                 if (!fontStyle.exists()) {
                     System.err.println("Font file not found.");
                     return;
@@ -263,7 +264,7 @@ public class MainMenuPage extends javax.swing.JFrame {
             SafariZone.setEnabled(false);
 
             try {
-                File fontStyle = new File("C:/Users/User/Downloads/pokemon-classic/Pokemon Classic.ttf");
+                File fontStyle = new File(fontPath);
                 if (!fontStyle.exists()) {
                     System.err.println("Font file not found.");
                     return;

@@ -52,7 +52,7 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\User\Downloads\StartPage.png"/>
+              <Image iconType="2" name="C:\Users\ljmwa\OneDrive - Universiti Malaya\OneDrive\Documents\NetBeansProjects\PokemonYF\POKEMON\src\main\java\com\mycompany\pokemon\Pictures\DS Assignment\StartPage\StartPage - Copy.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel2"/>
           </Properties>

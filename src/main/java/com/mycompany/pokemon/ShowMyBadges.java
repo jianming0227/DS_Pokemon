@@ -28,8 +28,8 @@ public class ShowMyBadges extends javax.swing.JFrame {
         
         ImageIcon boulderImage = null;
         ImageIcon boulderBImage = null;
-        boulderImage = new ImageIcon("C:\\Users\\User\\Downloads\\Boulder.png");
-        boulderBImage = new ImageIcon("C:\\Users\\User\\Downloads\\Boulder_Badge.png");        
+        boulderImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMyBadges\\Boulder.png");
+        boulderBImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMyBadges\\Boulder_Badge.png");        
         Image boulderResizedImage = boulderImage.getImage().getScaledInstance(167, 167, Image.SCALE_SMOOTH);
         Image boulderBResizedImage = boulderBImage.getImage().getScaledInstance(167, 167, Image.SCALE_SMOOTH);        
         ImageIcon boulderIcon = new ImageIcon(boulderResizedImage);
@@ -42,8 +42,8 @@ public class ShowMyBadges extends javax.swing.JFrame {
             
         ImageIcon cascadeImage = null;
         ImageIcon cascadeBImage = null;
-        cascadeImage = new ImageIcon("C:\\Users\\User\\Downloads\\Cascade.png");
-        cascadeBImage = new ImageIcon("C:\\Users\\User\\Downloads\\Cascade_Badge.png");        
+        cascadeImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMyBadges\\Cascade.png");
+        cascadeBImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMyBadges\\Cascade_Badge.png");        
         Image cascadeResizedImage = cascadeImage.getImage().getScaledInstance(167, 167, Image.SCALE_SMOOTH);
         Image cascadeBResizedImage = cascadeBImage.getImage().getScaledInstance(167, 167, Image.SCALE_SMOOTH);        
         ImageIcon cascadeIcon = new ImageIcon(cascadeResizedImage);
@@ -57,8 +57,8 @@ public class ShowMyBadges extends javax.swing.JFrame {
             
             ImageIcon thunderImage = null;
         ImageIcon thunderBImage = null;
-        thunderImage = new ImageIcon("C:\\Users\\User\\Downloads\\Thunder.png");
-        thunderBImage = new ImageIcon("C:\\Users\\User\\Downloads\\Thunder_Badge.png");        
+        thunderImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMyBadges\\Thunder.png");
+        thunderBImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMyBadges\\Thunder_Badge.png");        
         Image thunderResizedImage = thunderImage.getImage().getScaledInstance(167, 167, Image.SCALE_SMOOTH);
         Image thunderBResizedImage = thunderBImage.getImage().getScaledInstance(167, 167, Image.SCALE_SMOOTH);        
         ImageIcon thunderIcon = new ImageIcon(thunderResizedImage);
@@ -71,8 +71,8 @@ public class ShowMyBadges extends javax.swing.JFrame {
             
             ImageIcon rainbowImage = null;
         ImageIcon rainbowBImage = null;
-        rainbowImage = new ImageIcon("C:\\Users\\User\\Downloads\\Rainbow.png");
-        rainbowBImage = new ImageIcon("C:\\Users\\User\\Downloads\\Rainbow_Badge.png");        
+        rainbowImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMyBadges\\Rainbow.png");
+        rainbowBImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMyBadges\\Rainbow_Badge.png");        
         Image rainbowResizedImage = rainbowImage.getImage().getScaledInstance(167, 167, Image.SCALE_SMOOTH);
         Image rainbowBResizedImage = rainbowBImage.getImage().getScaledInstance(167, 167, Image.SCALE_SMOOTH);        
         ImageIcon rainbowIcon = new ImageIcon(rainbowResizedImage);
@@ -85,8 +85,8 @@ public class ShowMyBadges extends javax.swing.JFrame {
             
             ImageIcon soulImage = null;
         ImageIcon soulBImage = null;
-        soulImage = new ImageIcon("C:\\Users\\User\\Downloads\\Soul.png");
-        soulBImage = new ImageIcon("C:\\Users\\User\\Downloads\\Soul_Badge.png");        
+        soulImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMyBadges\\Soul.png");
+        soulBImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMyBadges\\Soul_Badge.png");        
         Image soulResizedImage = soulImage.getImage().getScaledInstance(167, 167, Image.SCALE_SMOOTH);
         Image soulBResizedImage = soulBImage.getImage().getScaledInstance(167, 167, Image.SCALE_SMOOTH);        
         ImageIcon soulIcon = new ImageIcon(soulResizedImage);
@@ -100,8 +100,8 @@ public class ShowMyBadges extends javax.swing.JFrame {
             
             ImageIcon marshImage = null;
         ImageIcon marshBImage = null;
-        marshImage = new ImageIcon("C:\\Users\\User\\Downloads\\Marsh.png");
-        marshBImage = new ImageIcon("C:\\Users\\User\\Downloads\\Marsh_Badge.png");        
+        marshImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMyBadges\\Marsh.png");
+        marshBImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMyBadges\\Marsh_Badge.png");        
         Image marshResizedImage = marshImage.getImage().getScaledInstance(167, 167, Image.SCALE_SMOOTH);
         Image marshBResizedImage = marshBImage.getImage().getScaledInstance(167, 167, Image.SCALE_SMOOTH);        
         ImageIcon marshIcon = new ImageIcon(marshResizedImage);
@@ -114,8 +114,8 @@ public class ShowMyBadges extends javax.swing.JFrame {
             
             ImageIcon volcanoImage = null;
         ImageIcon volcanoBImage = null;
-        volcanoImage = new ImageIcon("C:\\Users\\User\\Downloads\\Volcano.png");
-        volcanoBImage = new ImageIcon("C:\\Users\\User\\Downloads\\Volcano_Badge.png");        
+        volcanoImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMyBadges\\Volcano.png");
+        volcanoBImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMyBadges\\Volcano_Badge.png");        
         Image volcanoResizedImage = volcanoImage.getImage().getScaledInstance(167, 167, Image.SCALE_SMOOTH);
         Image volcanoBResizedImage = volcanoBImage.getImage().getScaledInstance(167, 167, Image.SCALE_SMOOTH);        
         ImageIcon volcanoIcon = new ImageIcon(volcanoResizedImage);
@@ -128,8 +128,8 @@ public class ShowMyBadges extends javax.swing.JFrame {
             
             ImageIcon earthImage = null;
         ImageIcon earthBImage = null;
-        earthImage = new ImageIcon("C:\\Users\\User\\Downloads\\Earth.png");
-        earthBImage = new ImageIcon("C:\\Users\\User\\Downloads\\Earth_Badge.png");        
+        earthImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMyBadges\\Earth.png");
+        earthBImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMyBadges\\Earth_Badge.png");        
         Image earthResizedImage = earthImage.getImage().getScaledInstance(167, 167, Image.SCALE_SMOOTH);
         Image earthBResizedImage = earthBImage.getImage().getScaledInstance(167, 167, Image.SCALE_SMOOTH);        
         ImageIcon earthIcon = new ImageIcon(earthResizedImage);
@@ -163,7 +163,6 @@ public class ShowMyBadges extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1080, 720));
         setMinimumSize(new java.awt.Dimension(1080, 720));
-        setPreferredSize(new java.awt.Dimension(1080, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
@@ -223,7 +222,7 @@ public class ShowMyBadges extends javax.swing.JFrame {
         Boulder.setPreferredSize(new java.awt.Dimension(167, 167));
         getContentPane().add(Boulder, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\Downloads\\My Badges (1).png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\ShowMyBadges\\My Badges (1).png")); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 720));
 

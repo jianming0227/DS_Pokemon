@@ -195,42 +195,42 @@ public class ChallengeGymLeader extends javax.swing.JFrame {
         switch (location) {
             case "PewterCity":
                 // Set the path to your image file here
-                String pewterImagePath = "C:\\Users\\User\\Downloads\\GymLeader\\1.png"; // Add your image path here
+                String pewterImagePath = "C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\GymLeader\\1.png"; // Add your image path here
                 backgroundImage = new ImageIcon(pewterImagePath);
                 break;
             case "ViridianCity":
                 // Set the path to your image file here
-                String viridianImagePath = "C:\\Users\\User\\Downloads\\GymLeader\\8.png"; // Add your image path here
+                String viridianImagePath = "C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\GymLeader\\8.png"; // Add your image path here
                 backgroundImage = new ImageIcon(viridianImagePath);
                 break;
             case "VermilionCity":
                 // Set the path to your image file here
-                String vermilionImagePath = "C:\\Users\\User\\Downloads\\GymLeader\\3.png"; // Add your image path here
+                String vermilionImagePath = "C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\GymLeader\\3.png"; // Add your image path here
                 backgroundImage = new ImageIcon(vermilionImagePath);
                 break;
             case "SaffronCity":
                 // Set the path to your image file here
-                String saffronImagePath = "C:\\Users\\User\\Downloads\\GymLeader\\6.png"; // Add your image path here
+                String saffronImagePath = "C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\GymLeader\\6.png"; // Add your image path here
                 backgroundImage = new ImageIcon(saffronImagePath);
                 break;
             case "FuchsiaCity":
                 // Set the path to your image file here
-                String fuchsiaImagePath = "C:\\Users\\User\\Downloads\\GymLeader\\5.png"; // Add your image path here
+                String fuchsiaImagePath = "C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\GymLeader\\5.png"; // Add your image path here
                 backgroundImage = new ImageIcon(fuchsiaImagePath);
                 break;
             case "CeladonCity":
                 // Set the path to your image file here
-                String celadonImagePath = "C:\\Users\\User\\Downloads\\GymLeader\\4.png"; // Add your image path here
+                String celadonImagePath = "C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\GymLeader\\4.png"; // Add your image path here
                 backgroundImage = new ImageIcon(celadonImagePath);
                 break;
             case "CeruleanCity":
                 // Set the path to your image file here
-                String ceruleanImagePath = "C:\\Users\\User\\Downloads\\GymLeader\\2.png"; // Add your image path here
+                String ceruleanImagePath = "C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\GymLeader\\2.png"; // Add your image path here
                 backgroundImage = new ImageIcon(ceruleanImagePath);
                 break;
             case "CinnabarIsland":
                 // Set the path to your image file here
-                String cinnabarImagePath = "C:\\Users\\User\\Downloads\\GymLeader\\7.png"; // Add your image path here
+                String cinnabarImagePath = "C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\GymLeader\\7.png"; // Add your image path here
                 backgroundImage = new ImageIcon(cinnabarImagePath);
                 break;
             default:
