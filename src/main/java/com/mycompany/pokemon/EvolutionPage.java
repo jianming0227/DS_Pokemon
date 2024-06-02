@@ -29,6 +29,7 @@ public class EvolutionPage extends javax.swing.JFrame {
         ImageIcon backgroundImage = null;
         switch (pokemonName) {
             case "Bulbasaur":
+<<<<<<< HEAD
                 backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Evolving\\1.png");
                 Background.setIcon(backgroundImage);
             case "Ivysaur":
@@ -40,13 +41,40 @@ public class EvolutionPage extends javax.swing.JFrame {
                 Background.setIcon(backgroundImage);
             case "Charmeleon":
                 backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Evolving\\4.png");
+=======
+            case "Ivysaur":
+                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Evolving\\1.png");
                 Background.setIcon(backgroundImage);
+            case "Venusaur":
+                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Evolving\\2.png");
+                Background.setIcon(backgroundImage);
+                break;
+            case "Charmander":
+            case "Charmeleon":
+                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Evolving\\3.png");
+                Background.setIcon(backgroundImage);
+                break;
+            case "Charizard":
+                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Evolving\\4.png");
+>>>>>>> a9bf7ce12be0e4a930d8611bd0fc924c47ae4bb5
+                Background.setIcon(backgroundImage);
+                break;
             case "Squirtle":
+<<<<<<< HEAD
                 backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Evolving\\5.png");
                 Background.setIcon(backgroundImage);
             case "Wartortle":
                 backgroundImage = new ImageIcon("C:\\Users\\ljmwa\\OneDrive - Universiti Malaya\\OneDrive\\Documents\\NetBeansProjects\\PokemonYF\\POKEMON\\src\\main\\java\\com\\mycompany\\pokemon\\Pictures\\DS Assignment\\Evolving\\6.png");
+=======
+            case "Wartortle":
+                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Evolving\\5.png");
                 Background.setIcon(backgroundImage);
+                break;
+            case "Blastoise":
+                backgroundImage = new ImageIcon("C:\\Users\\User\\Downloads\\Evolving\\6.png");
+>>>>>>> a9bf7ce12be0e4a930d8611bd0fc924c47ae4bb5
+                Background.setIcon(backgroundImage);
+                break;
             default:
                 // If the pokemon is not in the specified list, do nothing
                 break;
@@ -62,31 +90,38 @@ public class EvolutionPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         BackButton = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1920, 1080));
-        setMinimumSize(new java.awt.Dimension(1920, 1080));
+        setMaximumSize(new java.awt.Dimension(1200, 675));
+        setMinimumSize(new java.awt.Dimension(1200, 675));
+        setPreferredSize(new java.awt.Dimension(1200, 675));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BackButton.setFont(new java.awt.Font("Arial Black", 1, 48)); // NOI18N
-        BackButton.setText("BACK");
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        BackButton.setText("NICE!");
         BackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(BackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1640, 910, 270, 150));
+        jPanel1.add(BackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 570, 170, 60));
 
-        Background.setText("jLabel1");
-        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
+        Background.setMaximumSize(new java.awt.Dimension(1200, 675));
+        Background.setMinimumSize(new java.awt.Dimension(1200, 675));
+        Background.setPreferredSize(new java.awt.Dimension(1200, 675));
+        jPanel1.add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -200, 1920, 1080));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
-        try {
+         try {
             MainMenuPage mainMenuPageFrame = new MainMenuPage(saveNumber);
             this.dispose();
             mainMenuPageFrame.setVisible(true);
@@ -135,5 +170,6 @@ public class EvolutionPage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButton;
     private javax.swing.JLabel Background;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -27,6 +27,7 @@ import javax.swing.border.Border;
 import java.awt.FontFormatException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -237,6 +238,9 @@ public class ChooseSlotPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loadGameButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadGameButton1ActionPerformed
+        if(Save1.getText().equalsIgnoreCase("new")){
+            JOptionPane.showMessageDialog(null, "This game slot does not have any progress, please choose the start a new adventure!", "Invalid Slot", JOptionPane.INFORMATION_MESSAGE);
+        } else{
         try {
             loadGameButtonClicked = 1;
             
@@ -248,9 +252,13 @@ public class ChooseSlotPage extends javax.swing.JFrame {
         } catch (FontFormatException ex) {
             Logger.getLogger(ChooseSlotPage.class.getName()).log(Level.SEVERE, null, ex);
         }
+        }
     }//GEN-LAST:event_loadGameButton1ActionPerformed
 
     private void loadGameButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadGameButton3ActionPerformed
+        if(Save3.getText().equalsIgnoreCase("new")){
+            JOptionPane.showMessageDialog(null, "This game slot does not have any progress, please choose the start a new adventure!", "Invalid Slot", JOptionPane.INFORMATION_MESSAGE);
+        } else{
         try {
             loadGameButtonClicked = 3;
             
@@ -261,6 +269,7 @@ public class ChooseSlotPage extends javax.swing.JFrame {
             mainMenuPageFrame.setLocationRelativeTo(null);
         } catch (FontFormatException ex) {
             Logger.getLogger(ChooseSlotPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
         }
     }//GEN-LAST:event_loadGameButton3ActionPerformed
 
@@ -304,6 +313,9 @@ public class ChooseSlotPage extends javax.swing.JFrame {
     }//GEN-LAST:event_saveGameButton1ActionPerformed
 
     private void loadGameButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadGameButton2ActionPerformed
+        if(Save2.getText().equalsIgnoreCase("new")){
+            JOptionPane.showMessageDialog(null, "This game slot does not have any progress, please choose the start a new adventure!", "Invalid Slot", JOptionPane.INFORMATION_MESSAGE);
+        } else{
         try {
             loadGameButtonClicked = 2;
             
@@ -314,6 +326,7 @@ public class ChooseSlotPage extends javax.swing.JFrame {
             mainMenuPageFrame.setLocationRelativeTo(null);
         } catch (FontFormatException ex) {
             Logger.getLogger(ChooseSlotPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
         }
     }//GEN-LAST:event_loadGameButton2ActionPerformed
 

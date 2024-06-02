@@ -33,6 +33,7 @@ public class ChallengeGymLeader extends javax.swing.JFrame {
     private String[][] opponentInfo;
     private String[] playerInfo;
     private Queue<String> pokemonQueue;
+    static int temp = 0;
 
     private String opponentName;
     private int opponentLevel;
@@ -171,15 +172,24 @@ public class ChallengeGymLeader extends javax.swing.JFrame {
         setOpponentInfo(opponentInfo);
 
         setUpPlayerInfo(playerInfo[0], playerInfo[2], playerInfo[1], playerInfo[5], playerInfo[6], playerInfo[8], playerInfo[10], playerInfo[12]);
-        OpponentPokemonName.setText(opponentInfo[0][0]);
-        OpponentHp.setText(opponentInfo[0][2]);
-        OpponentType.setText(opponentInfo[0][4]);
-        OpponentLevel.setText(opponentInfo[0][1]);
-        OpponentMove1.setText(opponentInfo[0][5]);
-        OpponentMove2.setText(opponentInfo[0][7]);
-        OpponentMove3.setText(opponentInfo[0][9]);
-        OpponentMove4.setText(opponentInfo[0][11]);
 
+        System.out.println(temp + "SAFASFAS");
+
+        if (temp < opponentInfo.length) {
+            System.out.println(temp + "Temp");
+            System.out.println("FUCK THIS");
+            OpponentPokemonName.setText(opponentInfo[temp][0]);
+            OpponentHp.setText(opponentInfo[temp][2]);
+            OpponentType.setText(opponentInfo[temp][4]);
+            OpponentLevel.setText(opponentInfo[temp][1]);
+            OpponentMove1.setText(opponentInfo[temp][5]);
+            OpponentMove2.setText(opponentInfo[temp][7]);
+            OpponentMove3.setText(opponentInfo[temp][9]);
+            OpponentMove4.setText(opponentInfo[temp][11]);
+
+        } else {
+            System.out.println("No more opponents available in opponentInfo.");
+        }
     }
 
     public void setButtonInvisible(JButton... buttons) {
@@ -316,6 +326,7 @@ public class ChallengeGymLeader extends javax.swing.JFrame {
     }
 
     public void setUpPlayerInfo(String playerName, String playerHp, String playerType, String playerLevel, String playerMove1, String playerMove2, String playerMove3, String playerMove4) {
+        PlayerPokemonName.setText(playerName);
         PlayerName.setText(playerName);
         PlayerHp.setText(playerHp);
         PlayerType.setText(playerType);
@@ -413,6 +424,12 @@ public class ChallengeGymLeader extends javax.swing.JFrame {
             }
         });
         getContentPane().add(PlayerMove4B, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 590, 120, 60));
+
+        PlayerMove3B.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PlayerMove3BActionPerformed(evt);
+            }
+        });
         getContentPane().add(PlayerMove3B, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 590, 120, 60));
 
         PlayerMove2B.addActionListener(new java.awt.event.ActionListener() {
@@ -498,7 +515,6 @@ public class ChallengeGymLeader extends javax.swing.JFrame {
         getContentPane().add(PlayerLevel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, 140, 30));
 
         PlayerPokemonName.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
-        PlayerPokemonName.setText("jLabel1");
         getContentPane().add(PlayerPokemonName, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 140, 30));
 
         PlayerName.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
@@ -513,35 +529,26 @@ public class ChallengeGymLeader extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PlayerMove2BActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayerMove2BActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PlayerMove2BActionPerformed
-
-    private void PlayerMove4BActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayerMove4BActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PlayerMove4BActionPerformed
-
-    private void PlayerMove1BActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayerMove1BActionPerformed
         int firstPokemon = 1;
-        String selectDmgSql = "SELECT dmg1 FROM player_pokemon WHERE player_id = ?";
+        String selectDmgSql = "SELECT dmg2 FROM player_pokemon WHERE player_id = ?";
         String selectHpSql = "SELECT Hp FROM " + location.toLowerCase() + " WHERE id = ?";
         String updateHpSql = "UPDATE " + location.toLowerCase() + " SET Hp = ? WHERE id = ?";
         String selectPlayerHpSql = "SELECT Hp FROM player_pokemon WHERE player_id = ?";
-        String selectOpponentDmg1Sql = "SELECT Dmg1 FROM " + location.toLowerCase() + " WHERE id = ?";
+        String selectOpponentDmg1Sql = "SELECT Dmg2 FROM " + location.toLowerCase() + " WHERE id = ?";
         String updatePlayerHpSql = "UPDATE player_pokemon SET Hp = ? WHERE player_id = ?";
 
-        int dmg1 = 0;
+        int dmg2 = 0;
         int currentHp = 0;
         int playerHp = 0;
-        int opponentDmg1 = 0;
-
+        int opponentDmg2 = 0;
         try (Connection connection = getConnection()) {
-            while (!pokemonQueue.isEmpty()) {
-                // Fetch dmg1 from player_pokemon table
+            if (!pokemonQueue.isEmpty()) {
+                // Fetch  from player_pokemon table
                 try (PreparedStatement dmgStmt = connection.prepareStatement(selectDmgSql)) {
                     dmgStmt.setInt(1, saveNumber);
                     ResultSet dmgRs = dmgStmt.executeQuery();
                     if (dmgRs.next()) {
-                        dmg1 = dmgRs.getInt("dmg1");
+                        dmg2 = dmgRs.getInt("dmg2");
                     }
                 }
 
@@ -555,7 +562,7 @@ public class ChallengeGymLeader extends javax.swing.JFrame {
                 }
 
                 // Calculate remaining Hp for the opponent
-                int opponentRemainingHp = currentHp - dmg1;
+                int opponentRemainingHp = currentHp - dmg2;
 
                 // Fetch current playerHp from player_pokemon table
                 try (PreparedStatement playerHpStmt = connection.prepareStatement(selectPlayerHpSql)) {
@@ -571,12 +578,12 @@ public class ChallengeGymLeader extends javax.swing.JFrame {
                     opponentDmg1Stmt.setInt(1, firstPokemon);
                     ResultSet opponentDmg1Rs = opponentDmg1Stmt.executeQuery();
                     if (opponentDmg1Rs.next()) {
-                        opponentDmg1 = opponentDmg1Rs.getInt("Dmg1");
+                        opponentDmg2 = opponentDmg1Rs.getInt("Dmg2");
                     }
                 }
 
                 // Calculate remaining Hp for the player
-                int playerRemainingHp = playerHp - opponentDmg1;
+                int playerRemainingHp = playerHp - opponentDmg2;
 
                 // Update player Hp in player_pokemon table
                 try (PreparedStatement updatePlayerHpStmt = connection.prepareStatement(updatePlayerHpSql)) {
@@ -604,78 +611,514 @@ public class ChallengeGymLeader extends javax.swing.JFrame {
                     challengeGymLeader.setLocationRelativeTo(null);
                     return; // End the method here
                 }
-                System.out.println(opponentRemainingHp);
 
                 // Check if the battle ends (opponentRemainingHp is <= 0)
                 if (opponentRemainingHp <= 0) {
                     // Poll the defeated opponent Pokémon
                     pokemonQueue.poll();
-                    if (!pokemonQueue.isEmpty()) {
-                        // Get the information of the next opponent Pokémon
-                        String nextPokemonInfoSql = "SELECT * FROM " + location.toLowerCase() + " WHERE id = ?";
-                        try (PreparedStatement nextPokemonInfoStmt = connection.prepareStatement(nextPokemonInfoSql)) {
-                            nextPokemonInfoStmt.setInt(1, firstPokemon + 1);
-                            ResultSet nextPokemonInfoRs = nextPokemonInfoStmt.executeQuery();
-                            if (nextPokemonInfoRs.next()) {
-                                // Update GUI with information of the next opponent Pokémon
-                                OpponentPokemonName.setText(nextPokemonInfoRs.getString("Name"));
-                                OpponentLevel.setText(String.valueOf(nextPokemonInfoRs.getInt("Level")));
-                                OpponentHp.setText(String.valueOf(nextPokemonInfoRs.getInt("Hp")));
-                                OpponentType.setText(nextPokemonInfoRs.getString("Type"));
-                                OpponentMove1.setText(nextPokemonInfoRs.getString("Move1"));
-                                OpponentMove2.setText(nextPokemonInfoRs.getString("Move2"));
-                                OpponentMove3.setText(nextPokemonInfoRs.getString("Move3"));
-                                OpponentMove4.setText(nextPokemonInfoRs.getString("Move4"));
-                            }
-                        }
-                    }
+
                     // Gain XP
                     ConnectDatabase.gainXp(saveNumber, (opponentLevel * 5));
-// Update opponent's HP
+                    // Update opponent's HP
                     updateWildPokemonHp(location, firstPokemon, opponentMaxHp);
-// Restore player's HP
+                    // Restore player's HP
                     updatePlayerPokemonHp(saveNumber, playerMaxHp);
-// Show battle message
-                    String battleMessage = opponentName + " faints!\n" + playerName + " gained " + (opponentLevel * 5) + "xp.\n" + playerName + "[XP: " + ConnectDatabase.getXP(saveNumber) + "/" + ConnectDatabase.checkLevelLimit(ConnectDatabase.getLevel(saveNumber)) + "]";
+                    // Show battle message
+                    String battleMessage = opponentInfo[temp][0] + " faints!\n" + playerName + " gained " + (opponentLevel * 5) + "xp.\n" + playerName + "[XP: " + ConnectDatabase.getXP(saveNumber) + "/" + ConnectDatabase.checkLevelLimit(ConnectDatabase.getLevel(saveNumber)) + "]";
                     JOptionPane.showMessageDialog(null, battleMessage, "Battle End", JOptionPane.INFORMATION_MESSAGE);
                     ConnectDatabase.checkXp(saveNumber, playerName);
-                ConnectDatabase.checkEvolve(saveNumber, playerName);
-// Move to the next opponent Pokémon
-                    firstPokemon++;
+                    ConnectDatabase.checkEvolve(saveNumber, playerName);
+
+                    // Move to the next opponent Pokémon
+                    temp++;
+                    firstPokemon++; // Increment firstPokemon for the next iteration
                 }
-                // Refresh ChallengeGymLeader page to continue battling
-                this.dispose();
-                ChallengeGymLeader challengeGymLeader = new ChallengeGymLeader(saveNumber, location);
-                challengeGymLeader.setVisible(true);
-                challengeGymLeader.pack();
-                challengeGymLeader.setLocationRelativeTo(null);
-            }
 
-// If the pokemonQueue is empty, update badges and return to the main menu
-            ConnectDatabase.updateBadges(saveNumber, ConnectDatabase.earnBadges(location));
-            try {
-                MainMenuPage mainMenuPageFrame = new MainMenuPage(saveNumber);
-                mainMenuPageFrame.setVisible(true);
-                mainMenuPageFrame.pack();
-                mainMenuPageFrame.setLocationRelativeTo(null);
-            } catch (FontFormatException ex) {
-                Logger.getLogger(ShowMyPokemon.class.getName()).log(Level.SEVERE, null, ex);
-            }
+                // Check to ensure temp is within bounds
+                if (temp < opponentInfo.length) {
+                    // Refresh ChallengeGymLeader page to continue battling
+                    this.dispose();
+                    ChallengeGymLeader challengeGymLeader = new ChallengeGymLeader(saveNumber, location);
+                    challengeGymLeader.setVisible(true);
+                    challengeGymLeader.pack();
+                    challengeGymLeader.setLocationRelativeTo(null);
+                } else {
+                    System.out.println("No more opponent Pokémon. Proceeding to update badges and return to the main menu.");
+                    ConnectDatabase.updateBadges(saveNumber, ConnectDatabase.earnBadges(location));
+                    try {
+                        if (temp == numberOfPokemons) {
+                            temp = 0;
+                        }
+                        MainMenuPage mainMenuPageFrame = new MainMenuPage(saveNumber);
+                        mainMenuPageFrame.setVisible(true);
+                        mainMenuPageFrame.pack();
+                        mainMenuPageFrame.setLocationRelativeTo(null);
+                    } catch (FontFormatException ex) {
+                        Logger.getLogger(ShowMyPokemon.class.getName()).log(Level.SEVERE, null, ex);
+                    }
 
-// Close all related FightWildPokemon GUIs
-            Window[] windows = Window.getWindows();
-            for (Window window : windows) {
-                if (window instanceof ChallengeGymLeader) {
-                    window.dispose();
+                    // Close all related FightWildPokemon GUIs
+                    Window[] windows = Window.getWindows();
+                    for (Window window : windows) {
+                        if (window instanceof ChallengeGymLeader) {
+                            window.dispose();
+                        }
+                    }
                 }
             }
         } catch (SQLException e) {
             System.err.println("Database connection error:");
             e.printStackTrace();
+        } catch (Exception e) {
+            System.err.println("An error occurred:");
+            e.printStackTrace();
         }
+    }//GEN-LAST:event_PlayerMove2BActionPerformed
 
+    private void PlayerMove4BActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayerMove4BActionPerformed
+         if (!PlayerMove4.getText().equalsIgnoreCase(null)) {                                       
+        int firstPokemon = 1;
+        String selectDmgSql = "SELECT dmg FROM player_pokemon WHERE player_id = ?";
+        String selectHpSql = "SELECT Hp FROM " + location.toLowerCase() + " WHERE id = ?";
+        String updateHpSql = "UPDATE " + location.toLowerCase() + " SET Hp = ? WHERE id = ?";
+        String selectPlayerHpSql = "SELECT Hp FROM player_pokemon WHERE player_id = ?";
+        String selectOpponentDmg1Sql = "SELECT Dmg4 FROM " + location.toLowerCase() + " WHERE id = ?";
+        String updatePlayerHpSql = "UPDATE player_pokemon SET Hp = ? WHERE player_id = ?";
 
+        int dmg2 = 0;
+        int currentHp = 0;
+        int playerHp = 0;
+        int opponentDmg2 = 0;
+        try (Connection connection = getConnection()) {
+            if (!pokemonQueue.isEmpty()) {
+                // Fetch  from player_pokemon table
+                try (PreparedStatement dmgStmt = connection.prepareStatement(selectDmgSql)) {
+                    dmgStmt.setInt(1, saveNumber);
+                    ResultSet dmgRs = dmgStmt.executeQuery();
+                    if (dmgRs.next()) {
+                        dmg2 = dmgRs.getInt("dmg");
+                    }
+                }
+
+                // Fetch current Hp from location table
+                try (PreparedStatement hpStmt = connection.prepareStatement(selectHpSql)) {
+                    hpStmt.setInt(1, firstPokemon);
+                    ResultSet hpRs = hpStmt.executeQuery();
+                    if (hpRs.next()) {
+                        currentHp = hpRs.getInt("Hp");
+                    }
+                }
+
+                // Calculate remaining Hp for the opponent
+                int opponentRemainingHp = currentHp - dmg2;
+
+                // Fetch current playerHp from player_pokemon table
+                try (PreparedStatement playerHpStmt = connection.prepareStatement(selectPlayerHpSql)) {
+                    playerHpStmt.setInt(1, saveNumber);
+                    ResultSet playerHpRs = playerHpStmt.executeQuery();
+                    if (playerHpRs.next()) {
+                        playerHp = playerHpRs.getInt("Hp");
+                    }
+                }
+
+                // Fetch Dmg1 from the opponent in location table
+                try (PreparedStatement opponentDmg1Stmt = connection.prepareStatement(selectOpponentDmg1Sql)) {
+                    opponentDmg1Stmt.setInt(1, firstPokemon);
+                    ResultSet opponentDmg1Rs = opponentDmg1Stmt.executeQuery();
+                    if (opponentDmg1Rs.next()) {
+                        opponentDmg2 = opponentDmg1Rs.getInt("Dmg4");
+                    }
+                }
+
+                // Calculate remaining Hp for the player
+                int playerRemainingHp = playerHp - opponentDmg2;
+
+                // Update player Hp in player_pokemon table
+                try (PreparedStatement updatePlayerHpStmt = connection.prepareStatement(updatePlayerHpSql)) {
+                    updatePlayerHpStmt.setInt(1, playerRemainingHp);
+                    updatePlayerHpStmt.setInt(2, saveNumber);
+                    updatePlayerHpStmt.executeUpdate();
+                }
+
+                // Update Hp in location table
+                try (PreparedStatement updateHpStmt = connection.prepareStatement(updateHpSql)) {
+                    updateHpStmt.setInt(1, opponentRemainingHp);
+                    updateHpStmt.setInt(2, firstPokemon);
+                    updateHpStmt.executeUpdate();
+                }
+
+                // Check if the player has fainted
+                if (playerRemainingHp <= 0) {
+                    JOptionPane.showMessageDialog(null, playerName + " fainted!\nSince you only have one pokemon, you can revive your pokemon and continue with the battle.", "Battle Lost", JOptionPane.INFORMATION_MESSAGE);
+                    updatePlayerPokemonHp(saveNumber, playerMaxHp); // Call the new method to restore player HP
+                    // Refresh ChallengeGymLeader page to continue battling
+                    this.dispose();
+                    ChallengeGymLeader challengeGymLeader = new ChallengeGymLeader(saveNumber, location);
+                    challengeGymLeader.setVisible(true);
+                    challengeGymLeader.pack();
+                    challengeGymLeader.setLocationRelativeTo(null);
+                    return; // End the method here
+                }
+
+                // Check if the battle ends (opponentRemainingHp is <= 0)
+                if (opponentRemainingHp <= 0) {
+                    // Poll the defeated opponent Pokémon
+                    pokemonQueue.poll();
+
+                    // Gain XP
+                    ConnectDatabase.gainXp(saveNumber, (opponentLevel * 5));
+                    // Update opponent's HP
+                    updateWildPokemonHp(location, firstPokemon, opponentMaxHp);
+                    // Restore player's HP
+                    updatePlayerPokemonHp(saveNumber, playerMaxHp);
+                    // Show battle message
+                    String battleMessage = opponentInfo[temp][0] + " faints!\n" + playerName + " gained " + (opponentLevel * 5) + "xp.\n" + playerName + "[XP: " + ConnectDatabase.getXP(saveNumber) + "/" + ConnectDatabase.checkLevelLimit(ConnectDatabase.getLevel(saveNumber)) + "]";
+                    JOptionPane.showMessageDialog(null, battleMessage, "Battle End", JOptionPane.INFORMATION_MESSAGE);
+                    ConnectDatabase.checkXp(saveNumber, playerName);
+                    ConnectDatabase.checkEvolve(saveNumber, playerName);
+
+                    // Move to the next opponent Pokémon
+                    temp++;
+                    firstPokemon++; // Increment firstPokemon for the next iteration
+                }
+
+                // Check to ensure temp is within bounds
+                if (temp < opponentInfo.length) {
+                    // Refresh ChallengeGymLeader page to continue battling
+                    this.dispose();
+                    ChallengeGymLeader challengeGymLeader = new ChallengeGymLeader(saveNumber, location);
+                    challengeGymLeader.setVisible(true);
+                    challengeGymLeader.pack();
+                    challengeGymLeader.setLocationRelativeTo(null);
+                } else {
+                    System.out.println("No more opponent Pokémon. Proceeding to update badges and return to the main menu.");
+                    ConnectDatabase.updateBadges(saveNumber, ConnectDatabase.earnBadges(location));
+                    try {
+                        if (temp == numberOfPokemons) {
+                            temp = 0;
+                        }
+                        MainMenuPage mainMenuPageFrame = new MainMenuPage(saveNumber);
+                        mainMenuPageFrame.setVisible(true);
+                        mainMenuPageFrame.pack();
+                        mainMenuPageFrame.setLocationRelativeTo(null);
+                    } catch (FontFormatException ex) {
+                        Logger.getLogger(ShowMyPokemon.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
+                    // Close all related FightWildPokemon GUIs
+                    Window[] windows = Window.getWindows();
+                    for (Window window : windows) {
+                        if (window instanceof ChallengeGymLeader) {
+                            window.dispose();
+                        }
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Database connection error:");
+            e.printStackTrace();
+        } catch (Exception e) {
+            System.err.println("An error occurred:");
+            e.printStackTrace();
+        }
+         }
+    }//GEN-LAST:event_PlayerMove4BActionPerformed
+
+    private void PlayerMove1BActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayerMove1BActionPerformed
+         int firstPokemon = 1;
+        String selectDmgSql = "SELECT dmg1 FROM player_pokemon WHERE player_id = ?";
+        String selectHpSql = "SELECT Hp FROM " + location.toLowerCase() + " WHERE id = ?";
+        String updateHpSql = "UPDATE " + location.toLowerCase() + " SET Hp = ? WHERE id = ?";
+        String selectPlayerHpSql = "SELECT Hp FROM player_pokemon WHERE player_id = ?";
+        String selectOpponentDmg1Sql = "SELECT Dmg1 FROM " + location.toLowerCase() + " WHERE id = ?";
+        String updatePlayerHpSql = "UPDATE player_pokemon SET Hp = ? WHERE player_id = ?";
+
+        int dmg2 = 0;
+        int currentHp = 0;
+        int playerHp = 0;
+        int opponentDmg2 = 0;
+        try (Connection connection = getConnection()) {
+            if (!pokemonQueue.isEmpty()) {
+                // Fetch  from player_pokemon table
+                try (PreparedStatement dmgStmt = connection.prepareStatement(selectDmgSql)) {
+                    dmgStmt.setInt(1, saveNumber);
+                    ResultSet dmgRs = dmgStmt.executeQuery();
+                    if (dmgRs.next()) {
+                        dmg2 = dmgRs.getInt("dmg1");
+                    }
+                }
+
+                // Fetch current Hp from location table
+                try (PreparedStatement hpStmt = connection.prepareStatement(selectHpSql)) {
+                    hpStmt.setInt(1, firstPokemon);
+                    ResultSet hpRs = hpStmt.executeQuery();
+                    if (hpRs.next()) {
+                        currentHp = hpRs.getInt("Hp");
+                    }
+                }
+
+                // Calculate remaining Hp for the opponent
+                int opponentRemainingHp = currentHp - dmg2;
+
+                // Fetch current playerHp from player_pokemon table
+                try (PreparedStatement playerHpStmt = connection.prepareStatement(selectPlayerHpSql)) {
+                    playerHpStmt.setInt(1, saveNumber);
+                    ResultSet playerHpRs = playerHpStmt.executeQuery();
+                    if (playerHpRs.next()) {
+                        playerHp = playerHpRs.getInt("Hp");
+                    }
+                }
+
+                // Fetch Dmg1 from the opponent in location table
+                try (PreparedStatement opponentDmg1Stmt = connection.prepareStatement(selectOpponentDmg1Sql)) {
+                    opponentDmg1Stmt.setInt(1, firstPokemon);
+                    ResultSet opponentDmg1Rs = opponentDmg1Stmt.executeQuery();
+                    if (opponentDmg1Rs.next()) {
+                        opponentDmg2 = opponentDmg1Rs.getInt("Dmg1");
+                    }
+                }
+
+                // Calculate remaining Hp for the player
+                int playerRemainingHp = playerHp - opponentDmg2;
+
+                // Update player Hp in player_pokemon table
+                try (PreparedStatement updatePlayerHpStmt = connection.prepareStatement(updatePlayerHpSql)) {
+                    updatePlayerHpStmt.setInt(1, playerRemainingHp);
+                    updatePlayerHpStmt.setInt(2, saveNumber);
+                    updatePlayerHpStmt.executeUpdate();
+                }
+
+                // Update Hp in location table
+                try (PreparedStatement updateHpStmt = connection.prepareStatement(updateHpSql)) {
+                    updateHpStmt.setInt(1, opponentRemainingHp);
+                    updateHpStmt.setInt(2, firstPokemon);
+                    updateHpStmt.executeUpdate();
+                }
+
+                // Check if the player has fainted
+                if (playerRemainingHp <= 0) {
+                    JOptionPane.showMessageDialog(null, playerName + " fainted!\nSince you only have one pokemon, you can revive your pokemon and continue with the battle.", "Battle Lost", JOptionPane.INFORMATION_MESSAGE);
+                    updatePlayerPokemonHp(saveNumber, playerMaxHp); // Call the new method to restore player HP
+                    // Refresh ChallengeGymLeader page to continue battling
+                    this.dispose();
+                    ChallengeGymLeader challengeGymLeader = new ChallengeGymLeader(saveNumber, location);
+                    challengeGymLeader.setVisible(true);
+                    challengeGymLeader.pack();
+                    challengeGymLeader.setLocationRelativeTo(null);
+                    return; // End the method here
+                }
+
+                // Check if the battle ends (opponentRemainingHp is <= 0)
+                if (opponentRemainingHp <= 0) {
+                    // Poll the defeated opponent Pokémon
+                    pokemonQueue.poll();
+
+                    // Gain XP
+                    ConnectDatabase.gainXp(saveNumber, (opponentLevel * 5));
+                    // Update opponent's HP
+                    updateWildPokemonHp(location, firstPokemon, opponentMaxHp);
+                    // Restore player's HP
+                    updatePlayerPokemonHp(saveNumber, playerMaxHp);
+                    // Show battle message
+                    String battleMessage = opponentInfo[temp][0] + " faints!\n" + playerName + " gained " + (opponentLevel * 5) + "xp.\n" + playerName + "[XP: " + ConnectDatabase.getXP(saveNumber) + "/" + ConnectDatabase.checkLevelLimit(ConnectDatabase.getLevel(saveNumber)) + "]";
+                    JOptionPane.showMessageDialog(null, battleMessage, "Battle End", JOptionPane.INFORMATION_MESSAGE);
+                    ConnectDatabase.checkXp(saveNumber, playerName);
+                    ConnectDatabase.checkEvolve(saveNumber, playerName);
+
+                    // Move to the next opponent Pokémon
+                    temp++;
+                    firstPokemon++; // Increment firstPokemon for the next iteration
+                }
+
+                // Check to ensure temp is within bounds
+                if (temp < opponentInfo.length) {
+                    // Refresh ChallengeGymLeader page to continue battling
+                    this.dispose();
+                    ChallengeGymLeader challengeGymLeader = new ChallengeGymLeader(saveNumber, location);
+                    challengeGymLeader.setVisible(true);
+                    challengeGymLeader.pack();
+                    challengeGymLeader.setLocationRelativeTo(null);
+                } else {
+                    System.out.println("No more opponent Pokémon. Proceeding to update badges and return to the main menu.");
+                    ConnectDatabase.updateBadges(saveNumber, ConnectDatabase.earnBadges(location));
+                    try {
+                        if (temp == numberOfPokemons) {
+                            temp = 0;
+                        }
+                        MainMenuPage mainMenuPageFrame = new MainMenuPage(saveNumber);
+                        mainMenuPageFrame.setVisible(true);
+                        mainMenuPageFrame.pack();
+                        mainMenuPageFrame.setLocationRelativeTo(null);
+                    } catch (FontFormatException ex) {
+                        Logger.getLogger(ShowMyPokemon.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
+                    // Close all related FightWildPokemon GUIs
+                    Window[] windows = Window.getWindows();
+                    for (Window window : windows) {
+                        if (window instanceof ChallengeGymLeader) {
+                            window.dispose();
+                        }
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Database connection error:");
+            e.printStackTrace();
+        } catch (Exception e) {
+            System.err.println("An error occurred:");
+            e.printStackTrace();
+        } 
     }//GEN-LAST:event_PlayerMove1BActionPerformed
+
+    private void PlayerMove3BActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayerMove3BActionPerformed
+        if (!PlayerMove4.getText().equalsIgnoreCase(null)) {                                       
+        int firstPokemon = 1;
+        String selectDmgSql = "SELECT dmg3 FROM player_pokemon WHERE player_id = ?";
+        String selectHpSql = "SELECT Hp FROM " + location.toLowerCase() + " WHERE id = ?";
+        String updateHpSql = "UPDATE " + location.toLowerCase() + " SET Hp = ? WHERE id = ?";
+        String selectPlayerHpSql = "SELECT Hp FROM player_pokemon WHERE player_id = ?";
+        String selectOpponentDmg1Sql = "SELECT Dmg3 FROM " + location.toLowerCase() + " WHERE id = ?";
+        String updatePlayerHpSql = "UPDATE player_pokemon SET Hp = ? WHERE player_id = ?";
+
+        int dmg2 = 0;
+        int currentHp = 0;
+        int playerHp = 0;
+        int opponentDmg2 = 0;
+        try (Connection connection = getConnection()) {
+            if (!pokemonQueue.isEmpty()) {
+                // Fetch  from player_pokemon table
+                try (PreparedStatement dmgStmt = connection.prepareStatement(selectDmgSql)) {
+                    dmgStmt.setInt(1, saveNumber);
+                    ResultSet dmgRs = dmgStmt.executeQuery();
+                    if (dmgRs.next()) {
+                        dmg2 = dmgRs.getInt("dmg3");
+                    }
+                }
+
+                // Fetch current Hp from location table
+                try (PreparedStatement hpStmt = connection.prepareStatement(selectHpSql)) {
+                    hpStmt.setInt(1, firstPokemon);
+                    ResultSet hpRs = hpStmt.executeQuery();
+                    if (hpRs.next()) {
+                        currentHp = hpRs.getInt("Hp");
+                    }
+                }
+
+                // Calculate remaining Hp for the opponent
+                int opponentRemainingHp = currentHp - dmg2;
+
+                // Fetch current playerHp from player_pokemon table
+                try (PreparedStatement playerHpStmt = connection.prepareStatement(selectPlayerHpSql)) {
+                    playerHpStmt.setInt(1, saveNumber);
+                    ResultSet playerHpRs = playerHpStmt.executeQuery();
+                    if (playerHpRs.next()) {
+                        playerHp = playerHpRs.getInt("Hp");
+                    }
+                }
+
+                // Fetch Dmg1 from the opponent in location table
+                try (PreparedStatement opponentDmg1Stmt = connection.prepareStatement(selectOpponentDmg1Sql)) {
+                    opponentDmg1Stmt.setInt(1, firstPokemon);
+                    ResultSet opponentDmg1Rs = opponentDmg1Stmt.executeQuery();
+                    if (opponentDmg1Rs.next()) {
+                        opponentDmg2 = opponentDmg1Rs.getInt("Dmg3");
+                    }
+                }
+
+                // Calculate remaining Hp for the player
+                int playerRemainingHp = playerHp - opponentDmg2;
+
+                // Update player Hp in player_pokemon table
+                try (PreparedStatement updatePlayerHpStmt = connection.prepareStatement(updatePlayerHpSql)) {
+                    updatePlayerHpStmt.setInt(1, playerRemainingHp);
+                    updatePlayerHpStmt.setInt(2, saveNumber);
+                    updatePlayerHpStmt.executeUpdate();
+                }
+
+                // Update Hp in location table
+                try (PreparedStatement updateHpStmt = connection.prepareStatement(updateHpSql)) {
+                    updateHpStmt.setInt(1, opponentRemainingHp);
+                    updateHpStmt.setInt(2, firstPokemon);
+                    updateHpStmt.executeUpdate();
+                }
+
+                // Check if the player has fainted
+                if (playerRemainingHp <= 0) {
+                    JOptionPane.showMessageDialog(null, playerName + " fainted!\nSince you only have one pokemon, you can revive your pokemon and continue with the battle.", "Battle Lost", JOptionPane.INFORMATION_MESSAGE);
+                    updatePlayerPokemonHp(saveNumber, playerMaxHp); // Call the new method to restore player HP
+                    // Refresh ChallengeGymLeader page to continue battling
+                    this.dispose();
+                    ChallengeGymLeader challengeGymLeader = new ChallengeGymLeader(saveNumber, location);
+                    challengeGymLeader.setVisible(true);
+                    challengeGymLeader.pack();
+                    challengeGymLeader.setLocationRelativeTo(null);
+                    return; // End the method here
+                }
+
+                // Check if the battle ends (opponentRemainingHp is <= 0)
+                if (opponentRemainingHp <= 0) {
+                    // Poll the defeated opponent Pokémon
+                    pokemonQueue.poll();
+
+                    // Gain XP
+                    ConnectDatabase.gainXp(saveNumber, (opponentLevel * 5));
+                    // Update opponent's HP
+                    updateWildPokemonHp(location, firstPokemon, opponentMaxHp);
+                    // Restore player's HP
+                    updatePlayerPokemonHp(saveNumber, playerMaxHp);
+                    // Show battle message
+                    String battleMessage = opponentInfo[temp][0] + " faints!\n" + playerName + " gained " + (opponentLevel * 5) + "xp.\n" + playerName + "[XP: " + ConnectDatabase.getXP(saveNumber) + "/" + ConnectDatabase.checkLevelLimit(ConnectDatabase.getLevel(saveNumber)) + "]";
+                    JOptionPane.showMessageDialog(null, battleMessage, "Battle End", JOptionPane.INFORMATION_MESSAGE);
+                    ConnectDatabase.checkXp(saveNumber, playerName);
+                    ConnectDatabase.checkEvolve(saveNumber, playerName);
+
+                    // Move to the next opponent Pokémon
+                    temp++;
+                    firstPokemon++; // Increment firstPokemon for the next iteration
+                }
+
+                // Check to ensure temp is within bounds
+                if (temp < opponentInfo.length) {
+                    // Refresh ChallengeGymLeader page to continue battling
+                    this.dispose();
+                    ChallengeGymLeader challengeGymLeader = new ChallengeGymLeader(saveNumber, location);
+                    challengeGymLeader.setVisible(true);
+                    challengeGymLeader.pack();
+                    challengeGymLeader.setLocationRelativeTo(null);
+                } else {
+                    System.out.println("No more opponent Pokémon. Proceeding to update badges and return to the main menu.");
+                    ConnectDatabase.updateBadges(saveNumber, ConnectDatabase.earnBadges(location));
+                    try {
+                        if (temp == numberOfPokemons) {
+                            temp = 0;
+                        }
+                        MainMenuPage mainMenuPageFrame = new MainMenuPage(saveNumber);
+                        mainMenuPageFrame.setVisible(true);
+                        mainMenuPageFrame.pack();
+                        mainMenuPageFrame.setLocationRelativeTo(null);
+                    } catch (FontFormatException ex) {
+                        Logger.getLogger(ShowMyPokemon.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
+                    // Close all related FightWildPokemon GUIs
+                    Window[] windows = Window.getWindows();
+                    for (Window window : windows) {
+                        if (window instanceof ChallengeGymLeader) {
+                            window.dispose();
+                        }
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Database connection error:");
+            e.printStackTrace();
+        } catch (Exception e) {
+            System.err.println("An error occurred:");
+            e.printStackTrace();
+        }
+         }
+    }//GEN-LAST:event_PlayerMove3BActionPerformed
 
     /**
      * @param args the command line arguments

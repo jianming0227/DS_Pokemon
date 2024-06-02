@@ -379,14 +379,14 @@ public class MainMenuPage extends javax.swing.JFrame {
                 FightWildPokemonLTActionPerformed(evt);
             }
         });
-        getContentPane().add(FightWildPokemonLT, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 430, 60));
+        getContentPane().add(FightWildPokemonLT, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 280, 60));
 
         ChallengeGymLeader.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ChallengeGymLeaderActionPerformed(evt);
             }
         });
-        getContentPane().add(ChallengeGymLeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 940, 60));
+        getContentPane().add(ChallengeGymLeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 520, 60));
 
         PokeMaze.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -449,7 +449,7 @@ public class MainMenuPage extends javax.swing.JFrame {
                 TalkToMomActionPerformed(evt);
             }
         });
-        getContentPane().add(TalkToMom, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 940, 60));
+        getContentPane().add(TalkToMom, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 910, 60));
 
         MoveToButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -516,13 +516,18 @@ public class MainMenuPage extends javax.swing.JFrame {
     }//GEN-LAST:event_RivalRaceActionPerformed
 
     private void SafariZoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SafariZoneActionPerformed
+        this.dispose();
 
+        testSafariZoneGUI safariZone = new testSafariZoneGUI(saveNumber);
+        safariZone.setVisible(true);
+        safariZone.pack();
+        safariZone.setLocationRelativeTo(null);
     }//GEN-LAST:event_SafariZoneActionPerformed
 
     private void TalkToMomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TalkToMomActionPerformed
        this.dispose();
 
-        TalkToMomPage talkToMomPage = new TalkToMomPage();
+        TalkToMomPage talkToMomPage = new TalkToMomPage(saveNumber);
         talkToMomPage.setVisible(true);
         talkToMomPage.pack();
         talkToMomPage.setLocationRelativeTo(null);

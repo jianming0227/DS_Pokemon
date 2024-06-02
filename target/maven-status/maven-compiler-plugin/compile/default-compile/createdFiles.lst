@@ -4,13 +4,17 @@ com\mycompany\pokemon\MainMenuPage$17.class
 com\mycompany\pokemon\MainMenuPage$9.class
 com\mycompany\pokemon\MainMenuPage$2.class
 com\mycompany\pokemon\ChallengeGymLeader$1.class
+com\mycompany\pokemon\LevelUpPage$2.class
 com\mycompany\pokemon\testPokeMazeGUI$1.class
 com\mycompany\pokemon\MainMenuPage$10.class
 com\mycompany\pokemon\testPokeMazeGUI.class
+com\mycompany\pokemon\testSafariZoneGUI$7.class
 com\mycompany\pokemon\LoadGamePage$3.class
 com\mycompany\pokemon\MainMenuPage$16$1$1.class
 com\mycompany\pokemon\ConnectDatabase.class
 com\mycompany\pokemon\ChooseSlotPage$4.class
+com\mycompany\pokemon\ChallengeGymLeader$5.class
+com\mycompany\pokemon\testSafariZoneGUI$4.class
 com\mycompany\pokemon\ShowMyPokemon$2.class
 com\mycompany\pokemon\FightWildPokemonPage$1.class
 com\mycompany\pokemon1\RivalRace.class
@@ -20,8 +24,10 @@ com\mycompany\pokemon\Player.class
 com\mycompany\pokemon\ShowMyPokemon.class
 com\mycompany\pokemon\StartPage.class
 com\mycompany\pokemon\ChallengeGymLeader.class
+com\mycompany\pokemon\testSafariZoneGUI$1.class
 com\mycompany\pokemon\MainMenuPage$8.class
 com\mycompany\pokemon\ChooseSlotPage$6.class
+com\mycompany\pokemon\LevelUpPage.class
 com\mycompany\pokemon\MainMenuPage$1.class
 com\mycompany\pokemon\EvolutionPage.class
 com\mycompany\pokemon\MainMenuPage$16.class
@@ -33,22 +39,35 @@ com\mycompany\pokemon\MyFrame.class
 com\mycompany\pokemon\FightWildPokemonPage$3.class
 PokeMaze\testPokeMazeGUI.class
 com\mycompany\pokemon\ChooseSlotPage$3.class
+<<<<<<< HEAD
 PokeMaze\MazeTile.class
+=======
+com\mycompany\pokemon\LevelUpPage$1.class
+com\mycompany\pokemon\testSafariZoneGUI$10.class
+com\mycompany\pokemon\testSafariZoneGUI$8.class
+>>>>>>> a9bf7ce12be0e4a930d8611bd0fc924c47ae4bb5
 com\mycompany\pokemon\StartPage$2.class
 com\mycompany\pokemon\MainMenuPage$12.class
 com\mycompany\pokemon\ChooseSlotPage.class
 com\mycompany\pokemon1\MyFrame.class
 com\mycompany\pokemon\ChallengeGymLeader$3.class
 com\mycompany\pokemon\MainMenuPage$4.class
-com\mycompany\pokemon\FightWildPokemonPage$6.class
+com\mycompany\pokemon\testSafariZoneGUI$5.class
+com\mycompany\pokemon\testSafariZoneGUI$2.class
 com\mycompany\pokemon\MainMenuPage$15.class
 com\mycompany\pokemon\ChooseSlotPage$5.class
 com\mycompany\pokemon\FightWildPokemonPage$2.class
 com\mycompany\pokemon\ShowMapPage$1.class
 com\mycompany\pokemon\LoadGamePage.class
 com\mycompany\pokemon\RivalRace.class
+<<<<<<< HEAD
 PokeMaze\testPokeMazeGUI$1.class
 com\mycompany\pokemon1\congratsWindow.class
+=======
+com\mycompany\pokemon\ShowMyBadges$2.class
+com\mycompany\pokemon\testSafariZoneGUI$9.class
+com\mycompany\pokemon\ShowMyBadges.class
+>>>>>>> a9bf7ce12be0e4a930d8611bd0fc924c47ae4bb5
 com\mycompany\pokemon\MainMenuPage$7.class
 com\mycompany\pokemon\ChooseSlotPage$2.class
 com\mycompany\pokemon\EvolutionPage$2.class
@@ -59,11 +78,21 @@ com\mycompany\pokemon\FightWildPokemonPage$5.class
 com\mycompany\pokemon\Main.class
 com\mycompany\pokemon\ShowMapPage$2.class
 com\mycompany\pokemon\Maps.class
+<<<<<<< HEAD
+=======
+com\mycompany\pokemon\testSafariZoneGUI$6.class
+com\mycompany\pokemon\testSafariZoneGUI.class
+com\mycompany\pokemon\WrongDestination.class
+>>>>>>> a9bf7ce12be0e4a930d8611bd0fc924c47ae4bb5
 com\mycompany\pokemon\MainMenuPage$11.class
 com\mycompany\pokemon\MainMenuPage$6.class
 com\mycompany\pokemon\MainMenuPage$14.class
 com\mycompany\pokemon\ShowMyPokemon$1.class
 com\mycompany\pokemon\EvolutionPage$1.class
+<<<<<<< HEAD
+=======
+com\mycompany\pokemon\testSafariZoneGUI$3.class
+>>>>>>> a9bf7ce12be0e4a930d8611bd0fc924c47ae4bb5
 com\mycompany\pokemon\MainMenuPage.class
 com\mycompany\pokemon\LoadGamePage$1.class
 com\mycompany\pokemon\POKEMON.class

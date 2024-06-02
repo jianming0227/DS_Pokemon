@@ -31,7 +31,7 @@ public class FightWildPokemonPage extends javax.swing.JFrame {
     private String[] opponentInfo;
     private String[] playerInfo;
     private int rowNumber;
-    
+
     private int opponentLevel;
     private int opponentHp;
     private int opponentMaxHp;
@@ -65,10 +65,11 @@ public class FightWildPokemonPage extends javax.swing.JFrame {
 
     static int saveNumber;
     static String location;
-    static int idOpponent = -1;
+    int idOpponent = -1;
     int turn = 1;
     private int maxHp = -1;
     int index = 1;
+    int temp =0;
 
     /**
      * Creates new form FightWildPokemonPage
@@ -97,8 +98,10 @@ public class FightWildPokemonPage extends javax.swing.JFrame {
         ImageIcon arrowImage = new ImageIcon("C:\\Users\\User\\Downloads\\Arrow.png");
         Arrow.setIcon(arrowImage);
 
-        Random random = new Random();
-        setupOpponent(location);
+        if(temp ==0){
+           setupOpponent(location);
+        }
+        
 
         String selectSql1;
         String selectSql2;
@@ -120,8 +123,7 @@ public class FightWildPokemonPage extends javax.swing.JFrame {
             preparedStatement.setInt(1, idOpponent); // Set the parameter value
             ResultSet resultSet = preparedStatement.executeQuery();
 
-             // Initialize row number to store Pokémon info
-
+            // Initialize row number to store Pokémon info
             // Loop through the result set
             while (resultSet.next() && idOpponent > 0) {
                 opponentInfo[0] = resultSet.getString("Name"); // Pokémon name
@@ -175,7 +177,6 @@ public class FightWildPokemonPage extends javax.swing.JFrame {
 
         setOpponentInfo(opponentInfo);
         setPlayerInfo(playerInfo);
-
 
         String[] strongAgainstTypePlayer;
         String[] weakAgainstTypePlayer;
@@ -579,7 +580,6 @@ public class FightWildPokemonPage extends javax.swing.JFrame {
         LevelPlayer = new javax.swing.JLabel();
         HPPlayer = new javax.swing.JLabel();
         PokemonImg = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -593,8 +593,6 @@ public class FightWildPokemonPage extends javax.swing.JFrame {
         Arrow.setMinimumSize(new java.awt.Dimension(239, 130));
         Arrow.setPreferredSize(new java.awt.Dimension(239, 130));
         getContentPane().add(Arrow, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, -1, -1));
-
-        BattleMessage.setText("jLabel1");
         getContentPane().add(BattleMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 630, 460, 70));
 
         NamePlayer.setText("jLabel1");
@@ -636,21 +634,21 @@ public class FightWildPokemonPage extends javax.swing.JFrame {
         HPOpponent.setText("jLabel1");
         getContentPane().add(HPOpponent, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 380, 120, 40));
 
-        Move2.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        Move2.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         Move2.setText("jLabel1");
-        getContentPane().add(Move2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 490, 110, 50));
+        getContentPane().add(Move2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 490, 110, 50));
 
-        Move3.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        Move3.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         Move3.setText("jLabel1");
-        getContentPane().add(Move3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 540, 110, 50));
+        getContentPane().add(Move3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 540, 110, 50));
 
-        Move4.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        Move4.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         Move4.setText("jLabel1");
-        getContentPane().add(Move4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 540, 110, 50));
+        getContentPane().add(Move4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 540, 110, 50));
 
-        Move1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        Move1.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         Move1.setText("jLabel1");
-        getContentPane().add(Move1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 110, 50));
+        getContentPane().add(Move1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 490, 110, 50));
 
         LevelPlayer.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         LevelPlayer.setText("jLabel1");
@@ -662,15 +660,6 @@ public class FightWildPokemonPage extends javax.swing.JFrame {
 
         PokemonImg.setText("jLabel1");
         getContentPane().add(PokemonImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 280, 190));
-
-        jButton1.setFont(new java.awt.Font("Arial Black", 1, 36)); // NOI18N
-        jButton1.setText("BACK");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 630, 230, 60));
 
         Background.setText("jLabel2");
         getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 720));
@@ -687,7 +676,7 @@ public class FightWildPokemonPage extends javax.swing.JFrame {
         String selectPlayerHpSql = "SELECT Hp FROM player_pokemon WHERE player_id = ?";
         String selectOpponentDmg1Sql = "SELECT Dmg1 FROM " + location.toLowerCase() + " WHERE id = ?";
         String updatePlayerHpSql = "UPDATE player_pokemon SET Hp = ? WHERE player_id = ?";
-        
+
         System.out.println();
 
         int dmg1 = 0;
@@ -753,8 +742,9 @@ public class FightWildPokemonPage extends javax.swing.JFrame {
             }
 
             if (playerRemainingHp <= 0) {
-                JOptionPane.showMessageDialog(null, playerName + " fainted!\nYou lost the battle.", "Battle Lost", JOptionPane.INFORMATION_MESSAGE);
                 updatePlayerPokemonHp(saveNumber, playerMaxHp); // Call the new method to restore player HP
+                JOptionPane.showMessageDialog(null, playerName + " fainted!\nYou lost the battle.", "Battle Lost", JOptionPane.INFORMATION_MESSAGE);
+                
 
                 // Open the MainMenuPage
                 try {
@@ -919,6 +909,8 @@ public class FightWildPokemonPage extends javax.swing.JFrame {
                 updateWildPokemonHp(location, idOpponent, maxHp);
                 updatePlayerPokemonHp(saveNumber, playerMaxHp); // Call the new method to restore player HP
                 BattleMessage.setText(opponentName + " faints!\n" + playerName + " gained " + (opponentLevel * 5) + "xp.\n" + playerName + "[XP: " + ConnectDatabase.getXP(saveNumber) + "/" + ConnectDatabase.checkLevelLimit(ConnectDatabase.getLevel(saveNumber)) + "]");
+                ConnectDatabase.checkXp(saveNumber, playerName);
+                ConnectDatabase.checkEvolve(saveNumber, playerName);
                 JOptionPane.showMessageDialog(null, BattleMessage.getText(), "Battle End", JOptionPane.INFORMATION_MESSAGE);
 
                 // Close all related FightWildPokemon GUIs
@@ -1053,6 +1045,8 @@ public class FightWildPokemonPage extends javax.swing.JFrame {
                 updateWildPokemonHp(location, idOpponent, maxHp);
                 updatePlayerPokemonHp(saveNumber, playerMaxHp); // Call the new method to restore player HP
                 BattleMessage.setText(opponentName + " faints!\n" + playerName + " gained " + (opponentLevel * 5) + "xp.\n" + playerName + "[XP: " + ConnectDatabase.getXP(saveNumber) + "/" + ConnectDatabase.checkLevelLimit(ConnectDatabase.getLevel(saveNumber)) + "]");
+                ConnectDatabase.checkXp(saveNumber, playerName);
+                ConnectDatabase.checkEvolve(saveNumber, playerName);
                 JOptionPane.showMessageDialog(null, BattleMessage.getText(), "Battle End", JOptionPane.INFORMATION_MESSAGE);
 
                 // Close all related FightWildPokemon GUIs
@@ -1182,10 +1176,13 @@ public class FightWildPokemonPage extends javax.swing.JFrame {
 
             // Check if the battle ends
             if (opponentRemainingHp <= 0) {
+                temp++;
                 gainXp(saveNumber, (opponentLevel * 5));
                 updateWildPokemonHp(location, idOpponent, maxHp);
                 updatePlayerPokemonHp(saveNumber, playerMaxHp); // Call the new method to restore player HP
                 BattleMessage.setText(opponentName + " faints!\n" + playerName + " gained " + (opponentLevel * 5) + "xp.\n" + playerName + "[XP: " + ConnectDatabase.getXP(saveNumber) + "/" + ConnectDatabase.checkLevelLimit(ConnectDatabase.getLevel(saveNumber)) + "]");
+                ConnectDatabase.checkXp(saveNumber, playerName);
+                ConnectDatabase.checkEvolve(saveNumber, playerName);
                 JOptionPane.showMessageDialog(null, BattleMessage.getText(), "Battle End", JOptionPane.INFORMATION_MESSAGE);
 
                 // Close all related FightWildPokemon GUIs
@@ -1218,18 +1215,6 @@ public class FightWildPokemonPage extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_Move4ButtonActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try {
-            MainMenuPage mainMenuPageFrame = new MainMenuPage(saveNumber);
-            this.dispose();
-            mainMenuPageFrame.setVisible(true);
-            mainMenuPageFrame.pack();
-            mainMenuPageFrame.setLocationRelativeTo(null);
-        } catch (FontFormatException ex) {
-            Logger.getLogger(ShowMyPokemon.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1284,6 +1269,5 @@ public class FightWildPokemonPage extends javax.swing.JFrame {
     private javax.swing.JButton Move4Button;
     private javax.swing.JLabel NamePlayer;
     private javax.swing.JLabel PokemonImg;
-    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
