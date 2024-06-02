@@ -16,4 +16,4 @@ Your username, password and jdbc_url in ConnectDatabse class pom.xml under Proje
 
 Here's how to do in mySQL: 
 [MySQL.Database (1).docx](https://github.com/YeeFong21/POKEMON/files/15446759/MySQL.Database.1.docx)
->>>>>>> a9bf7ce12be0e4a930d8611bd0fc924c47ae4bb5
+
